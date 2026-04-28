@@ -29,3 +29,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9069195, 0)
 
 [node name="Camera3D" parent="." unique_id=1753978119 instance=ExtResource("2_pcu7d")]
 transform = Transform3D(0.0017857105, -0.6742739, 0.73847926, 0, 0.7384804, 0.67427504, -0.9999984, -0.0012040599, 0.0013187123, 9.731198, 9.185011, 0.0053244606)
+fov = 51.6
