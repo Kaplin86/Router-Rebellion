@@ -8,3 +8,9 @@ func _process(delta):
 	if targetObject:
 		global_position = lerp(position, targetObject.global_position + offset, delta * speed)
 		look_at(targetObject.global_position)
+
+func _ready() -> void:
+	_check_shader_stuff()
+
+func _check_shader_stuff():
+	$SubViewport.size = get_viewport().size
