@@ -17,7 +17,7 @@ func impulse(movement : Vector3):
 	velocity += movement
 
 func runDrag(delta):
-	var newVelocity = Vector3(0,velocity.y,0)
+	var newVelocity = Vector3(0,velocity.y -0.01,0)
 	velocity = lerp(velocity,newVelocity,delta * drag)
 
 func turnToMouse():
@@ -30,5 +30,3 @@ func turnToMouse():
 	if position3D:
 		var newPosition = Vector3(position3D.x,global_position.y,position3D.z)
 		look_at(newPosition)
-	
-	

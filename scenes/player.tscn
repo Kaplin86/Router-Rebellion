@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://udplv28tkqr7"]
 
 [ext_resource type="Script" uid="uid://dtvjym4oskwtc" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://ds5hgd0e5fkae" path="res://scripts/shootingManager.gd" id="2_g2els"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8vuu"]
 
@@ -33,3 +34,10 @@ transform = Transform3D(-1.1421661e-08, 7.2912627e-09, 0.30999994, 0.16680464, 0
 cast_shadow = 0
 mesh = SubResource("PrismMesh_u8vuu")
 surface_material_override/0 = SubResource("StandardMaterial3D_u8vuu")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1011424493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.7652919)
+
+[node name="ShootingManager" type="Node" parent="." unique_id=676399713 node_paths=PackedStringArray("shootPos")]
+script = ExtResource("2_g2els")
+shootPos = NodePath("../Marker3D")
