@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Router Rebellion"
+run/main_scene="uid://bk0dotxgst7se"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [physics]
 

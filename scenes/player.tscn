@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://udplv28tkqr7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8vuu"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3vyb7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3vyb7"]
+shading_mode = 0
+
+[sub_resource type="PrismMesh" id="PrismMesh_u8vuu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u8vuu"]
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+disable_receive_shadows = true
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1044230419]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1476395849]
+shape = SubResource("CapsuleShape3D_u8vuu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=57824957]
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_3vyb7")
+surface_material_override/0 = SubResource("StandardMaterial3D_3vyb7")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=419317927]
+transform = Transform3D(0.26129717, -0.16680466, 0, 0.16680466, 0.26129717, 0, 0, 0, 0.30999997, 0.50794655, 0.6428207, 0)
+cast_shadow = 0
+mesh = SubResource("PrismMesh_u8vuu")
+surface_material_override/0 = SubResource("StandardMaterial3D_u8vuu")
