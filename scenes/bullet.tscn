@@ -1,13 +1,19 @@
 [gd_scene format=3 uid="uid://b1ksnwnc8sr3m"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_h1aey"]
+[ext_resource type="Script" uid="uid://48v8ekw8ucyx" path="res://scripts/bullet.gd" id="1_mkf8s"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_mkf8s"]
+radius = 0.25
+height = 0.5
 
-[node name="Node3D" type="RigidBody3D" unique_id=643011394]
+[sub_resource type="SphereShape3D" id="SphereShape3D_h1aey"]
+radius = 0.26111683
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1355163731]
-shape = SubResource("SphereShape3D_h1aey")
+[node name="Node3D" type="CharacterBody3D" unique_id=755381951]
+script = ExtResource("1_mkf8s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=18461517]
 mesh = SubResource("SphereMesh_mkf8s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1355163731]
+shape = SubResource("SphereShape3D_h1aey")

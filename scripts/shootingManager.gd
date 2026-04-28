@@ -27,7 +27,7 @@ func shoot():
 	print("FIRE IN THE HOLE!")
 	var newBullet : Node3D = baseBullet.instantiate()
 	get_parent().add_sibling(newBullet)
-	newBullet.global_position = shootPos.global_position
+	newBullet.global_transform = shootPos.global_transform
 	
 
 func _resetCooldown():
