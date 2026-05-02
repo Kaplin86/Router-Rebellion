@@ -41,3 +41,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.7652919)
 [node name="ShootingManager" type="Node" parent="." unique_id=676399713 node_paths=PackedStringArray("shootPos")]
 script = ExtResource("2_g2els")
 shootPos = NodePath("../Marker3D")
+cooldownTime = 0.05
