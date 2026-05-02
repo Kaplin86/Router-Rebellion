@@ -16,7 +16,7 @@ float luminance(vec3 c) {
 
 bool is_already_outlined(vec3 c) {
     vec3 hsv = rgb2hsv(c);
-    return hsv.y > 0.6; // heuristic: boosted saturation = post-processed region
+    return hsv.y > 0.6;
 }
 
 void fragment() {
