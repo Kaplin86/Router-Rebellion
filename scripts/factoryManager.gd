@@ -71,7 +71,16 @@ func drawLine(RootNode : FactoryNode, connectedNode : Array):
 		var newLine = Line2D.new()
 		var node1 = resourceToNodes[RootNode]
 		var node2 = resourceToNodes[I]
-		add_child(newLine)
-		newLine.add_point(node1.global_position)
-		newLine.add_point(node2.global_position)
+		graph.add_child(newLine)
+		
+		newLine.add_point(getPointOnNode(node1,getGlobalCenterOfControl(node1) + Vector2(getGlobalCenterOfControl(node2).x,0)))
+		newLine.add_point(getPointOnNode(node2,getGlobalCenterOfControl(node1)))
 		connectionLines.append(newLine)
+
+func getPointOnNode(node : Control, point : Vector2):
+	var newX = clamp(point.x,node.position.x,node.position.x + node.size.x)
+	var newY = clamp(point.y,node.position.y,node.position.y + node.size.y)
+	return Vector2(newX,newY)
+
+func getGlobalCenterOfControl(node : Control):
+	return node.position + (node.size / 2)
