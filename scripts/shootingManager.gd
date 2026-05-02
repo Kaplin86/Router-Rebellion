@@ -17,6 +17,12 @@ func _ready():
 	cooldown.wait_time = cooldownTime
 	cooldown.one_shot = true
 	cooldown.timeout.connect(_resetCooldown)
+	
+	var value = References.runFactorySave(load("res://data/testFactory.tres"),BulletPayload.new())
+	print(value)
+	
+
+
 
 func _process(delta):
 	if canFire:

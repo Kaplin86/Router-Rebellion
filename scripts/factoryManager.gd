@@ -44,6 +44,7 @@ func _process(delta: float) -> void:
 				for I in save.nodeConnections:
 					if save.nodeConnections[I].has(resource):
 						save.nodeConnections[I].erase(resource)
+	print(save.nodes)
 
 func loadSave():
 	for I in save.nodes:
@@ -134,3 +135,7 @@ func _on_graph_edit_connection_to_empty(from_node: StringName, from_port: int, r
 		_on_graph_edit_connection_request(graph.get_node(str(from_node)).name,0,node.name,0)
 	
 	newPopup.queue_free()
+
+
+func _on_button_pressed() -> void:
+	ResourceSaver.save(save,"user://factorySave.tres")

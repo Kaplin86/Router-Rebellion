@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="FactorySave" format=3 uid="uid://m3yshcocv5k3"]
+
+[ext_resource type="Script" uid="uid://diqnci5ult8vm" path="res://scripts/resources/factoryNode.gd" id="1_ce1r1"]
+[ext_resource type="Script" uid="uid://b5g7uct24kvpm" path="res://scripts/resources/factorySave.gd" id="2_sun6w"]
+
+[sub_resource type="Resource" id="Resource_x2uyr"]
+resource_local_to_scene = true
+script = ExtResource("1_ce1r1")
+type = "Inventory"
+description = "Your gun inputs come from here!"
+canGetInput = false
+canDelete = false
+metadata/_custom_type_script = "uid://diqnci5ult8vm"
+
+[sub_resource type="Resource" id="Resource_fb5lx"]
+resource_local_to_scene = true
+script = ExtResource("1_ce1r1")
+type = "Output"
+description = "Your factory outputs go here"
+maxOutCount = 0
+canDelete = false
+metadata/_custom_type_script = "uid://diqnci5ult8vm"
+
+[resource]
+script = ExtResource("2_sun6w")
+nodes = Array[ExtResource("1_ce1r1")]([SubResource("Resource_x2uyr"), SubResource("Resource_fb5lx")])
+nodePositions = Dictionary[ExtResource("1_ce1r1"), Vector2]({
+SubResource("Resource_x2uyr"): Vector2(300, 300),
+SubResource("Resource_fb5lx"): Vector2(900, 300)
+})
+metadata/_custom_type_script = "uid://b5g7uct24kvpm"

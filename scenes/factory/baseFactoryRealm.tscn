@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cje3v4hkp0lki"]
 
 [ext_resource type="Script" uid="uid://co3f66ymnxl8l" path="res://scripts/factoryManager.gd" id="1_6e2gi"]
-[ext_resource type="Resource" uid="uid://bch3e15mv7d46" path="res://scripts/resources/factoryTest.tres" id="2_4tpoi"]
+[ext_resource type="Resource" uid="uid://c2noevm7gy7u7" path="res://data/testFactory.tres" id="2_4tpoi"]
 
 [node name="Control" type="Control" unique_id=759201573 node_paths=PackedStringArray("graph")]
 layout_mode = 3
@@ -35,7 +35,16 @@ item_1/id = 1
 item_2/text = "Router"
 item_2/id = 2
 
+[node name="Button" type="Button" parent="." unique_id=2143074989]
+layout_mode = 0
+offset_left = 1016.0
+offset_top = 5.0
+offset_right = 1139.0
+offset_bottom = 36.0
+text = "SAVE AND EXIT"
+
 [connection signal="connection_from_empty" from="GraphEdit" to="." method="_on_graph_edit_connection_from_empty"]
 [connection signal="connection_request" from="GraphEdit" to="." method="_on_graph_edit_connection_request"]
 [connection signal="connection_to_empty" from="GraphEdit" to="." method="_on_graph_edit_connection_to_empty"]
 [connection signal="disconnection_request" from="GraphEdit" to="." method="_on_graph_edit_disconnection_request"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
