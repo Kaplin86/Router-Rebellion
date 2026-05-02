@@ -7,12 +7,37 @@ var baseNode = preload("res://scenes/factory/factoryNode.tscn")
 
 
 var selectedNode : GraphElement = null
-var resourceToNodes : Dictionary[FactoryNode,GraphElement] = {}
+var resourceToNodes : Dictionary[FactoryNode,GraphNode] = {}
 
 var startSelectPos = Vector2.ZERO
 var lastDragConnectionSource = null
 
+var protectedTypes = ["inventory","output"]
 
+
+func _ready():
+	loadSave()
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("delete"):
+		var currentSelectedNodes = []
+		for I : GraphNode in resourceToNodes.values():
+			if I.selected:
+				currentSelectedNodes.append(I)
+		
+		for delNode : GraphNode in currentSelectedNodes:
+			var resource : FactoryNode = resourceToNodes.find_key(delNode)
+			print("tryuing to delete", resource)
+			if not resource.type in protectedTypes:
+				
+				delNode.queue_free()
+				resourceToNodes.erase(resource)
+				save.nodes.erase(resource)
+				save.nodePositions.erase(resource)
+				save.nodeConnections.erase(resource)
+				for I in save.nodeConnections:
+					if save.nodeConnections[I].has(resource):
+						save.nodeConnections[I].erase(resource)
 
 func loadSave():
 	for I in save.nodes:
@@ -45,8 +70,6 @@ func createNodeFromResource(I : FactoryNode):
 	if I.type == "output":
 		newNode.set_slot_enabled_right(0,false)
 
-func _ready():
-	loadSave()
 
 func onNodeDrag(node : GraphElement):
 	var resource : FactoryNode = resourceToNodes.find_key(node)
@@ -60,7 +83,6 @@ func _on_graph_edit_connection_request(from_node: StringName, from_port: int, to
 	if !save.nodeConnections.has(fromResource):
 		save.nodeConnections[fromResource] = []
 	save.nodeConnections[fromResource].append(toResource)
-	print("node connections are now", save.nodeConnections)
 	renderConnections()
 
 
@@ -74,8 +96,8 @@ func _on_graph_edit_disconnection_request(from_node: StringName, from_port: int,
 
 
 func _on_graph_edit_connection_from_empty(to_node: StringName, to_port: int, release_position: Vector2) -> void:
-	var toResource = resourceToNodes.find_key(graph.get_node(str(to_node)))
-	$PopupMenu.visible = true
+	#var toResource = resourceToNodes.find_key(graph.get_node(str(to_node)))
+	#$PopupMenu.visible = true
 	print("hi")
 	#var newResource = FactoryNode.new()
 	
@@ -98,5 +120,6 @@ func _on_graph_edit_connection_to_empty(from_node: StringName, from_port: int, r
 		createNodeFromResource(newNode)
 		var node = resourceToNodes[newNode]
 		node.position_offset = save.nodePositions[newNode]
+		_on_graph_edit_connection_request(graph.get_node(str(from_node)).name,0,node.name,0)
 	
 	newPopup.queue_free()
