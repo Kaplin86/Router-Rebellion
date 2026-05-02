@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bmci4fvto72aa"]
+
+[node name="GraphElement" type="GraphElement" unique_id=2080973253]
+anchors_preset = -1
+anchor_left = 0.058159724
+anchor_top = 0.1712963
+anchor_right = 0.28125
+anchor_bottom = 0.4830247
+position_offset = Vector2(67, 111)
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1191904808]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="PanelContainer" unique_id=398551956]
+custom_minimum_size = Vector2(0, 63.055)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="PanelContainer" unique_id=2109407394]
+custom_minimum_size = Vector2(0, 132.665)
+layout_mode = 2
+size_flags_vertical = 8
+text = "This uses the item in the first slot. "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

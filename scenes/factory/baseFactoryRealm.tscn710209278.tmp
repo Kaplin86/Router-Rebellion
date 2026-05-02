@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cje3v4hkp0lki"]
+
+[ext_resource type="Script" uid="uid://co3f66ymnxl8l" path="res://scripts/factoryManager.gd" id="1_6e2gi"]
+[ext_resource type="Script" uid="uid://diqnci5ult8vm" path="res://scripts/resources/factoryNode.gd" id="2_4y15m"]
+[ext_resource type="Script" uid="uid://b5g7uct24kvpm" path="res://scripts/resources/factorySave.gd" id="3_2yvhw"]
+
+[sub_resource type="Resource" id="Resource_4y15m"]
+script = ExtResource("2_4y15m")
+type = "Inventory"
+metadata/_custom_type_script = "uid://diqnci5ult8vm"
+
+[sub_resource type="Resource" id="Resource_2yvhw"]
+script = ExtResource("2_4y15m")
+type = "Splitter"
+metadata/_custom_type_script = "uid://diqnci5ult8vm"
+
+[sub_resource type="Resource" id="Resource_4mdys"]
+script = ExtResource("2_4y15m")
+type = "Output"
+metadata/_custom_type_script = "uid://diqnci5ult8vm"
+
+[sub_resource type="Resource" id="Resource_0wk6x"]
+script = ExtResource("3_2yvhw")
+nodes = Array[ExtResource("2_4y15m")]([SubResource("Resource_4y15m"), SubResource("Resource_2yvhw"), SubResource("Resource_4mdys")])
+nodePositions = Dictionary[ExtResource("2_4y15m"), Vector2]({
+SubResource("Resource_4y15m"): Vector2(0, 0),
+SubResource("Resource_2yvhw"): Vector2(100, 0),
+SubResource("Resource_4mdys"): Vector2(200, 0)
+})
+nodeConnections = {
+SubResource("Resource_4y15m"): SubResource("Resource_2yvhw"),
+SubResource("Resource_2yvhw"): SubResource("Resource_4mdys")
+}
+metadata/_custom_type_script = "uid://b5g7uct24kvpm"
+
+[node name="Control" type="Control" unique_id=759201573 node_paths=PackedStringArray("graph")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6e2gi")
+save = SubResource("Resource_0wk6x")
+graph = NodePath("GraphEdit")
+
+[node name="GraphEdit" type="GraphEdit" parent="." unique_id=727612001]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

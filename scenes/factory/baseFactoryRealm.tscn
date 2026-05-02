@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cje3v4hkp0lki"]
+
+[ext_resource type="Script" uid="uid://co3f66ymnxl8l" path="res://scripts/factoryManager.gd" id="1_6e2gi"]
+[ext_resource type="Resource" uid="uid://bch3e15mv7d46" path="res://scripts/resources/factoryTest.tres" id="2_4tpoi"]
+
+[node name="Control" type="Control" unique_id=759201573 node_paths=PackedStringArray("graph", "drawline")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6e2gi")
+save = ExtResource("2_4tpoi")
+graph = NodePath("GraphEdit")
+drawline = NodePath("GraphEdit/DrawingLine")
+
+[node name="GraphEdit" type="GraphEdit" parent="." unique_id=727612001]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DrawingLine" type="Line2D" parent="GraphEdit" unique_id=649384183]
+visible = false
+points = PackedVector2Array(0, 0, 0, 0)
+
+[connection signal="node_deselected" from="GraphEdit" to="." method="deselect"]
+[connection signal="node_selected" from="GraphEdit" to="." method="select"]
