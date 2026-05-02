@@ -27,7 +27,6 @@ show_arrange_button = false
 
 [node name="PopupMenu" type="PopupMenu" parent="." unique_id=1288097300]
 oversampling_override = 1.0
-visible = true
 item_count = 3
 item_0/text = "Splitter"
 item_0/id = 0

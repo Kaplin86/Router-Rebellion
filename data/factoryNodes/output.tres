@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FactoryNode" format=3 uid="uid://cmiroxjk6nqm6"]
+
+[ext_resource type="Script" uid="uid://diqnci5ult8vm" path="res://scripts/resources/factoryNode.gd" id="1_8j2vh"]
+
+[resource]
+script = ExtResource("1_8j2vh")
+type = "Output"
+description = "Your factory outputs go here"
+maxOutCount = 0
+canDelete = false
+metadata/_custom_type_script = "uid://diqnci5ult8vm"

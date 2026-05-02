@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FactoryNode" format=3 uid="uid://bug8pqu5t0fpx"]
+
+[ext_resource type="Script" uid="uid://diqnci5ult8vm" path="res://scripts/resources/factoryNode.gd" id="1_tk7iw"]
+
+[resource]
+script = ExtResource("1_tk7iw")
+type = "Inventory"
+description = "Your gun inputs come from here!"
+canGetInput = false
+canDelete = false
+metadata/_custom_type_script = "uid://diqnci5ult8vm"

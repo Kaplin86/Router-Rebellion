@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SplitterNode" format=3 uid="uid://dbnygyud4dtss"]
+
+[ext_resource type="Script" uid="uid://d2ilv61682sgq" path="res://scripts/resources/factoryNodeVariants/splitter.gd" id="1_mmq8b"]
+
+[resource]
+script = ExtResource("1_mmq8b")
+ratio = 0.75
+type = "Imbalanced Splitter"
+description = "Takes inputs and splits it into two outputs, one with [color=yellow]x0.75[/color] the initial size, and one with [color=yellow]x0.25[/color]"
+metadata/_custom_type_script = "uid://d2ilv61682sgq"

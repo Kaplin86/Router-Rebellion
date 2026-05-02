@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="RefinerNode" format=3 uid="uid://d1xf65xnx306p"]
+
+[ext_resource type="Script" uid="uid://x3c51tgiudwg" path="res://scripts/resources/factoryNodeVariants/refiner.gd" id="1_itv7p"]
+
+[resource]
+script = ExtResource("1_itv7p")
+type = "Refiner"
+description = "Decreases the size of the input by [color=yellow]x0.9[/color] and increases the damage by [color=yellow]x1.1[/color] "
+metadata/_custom_type_script = "uid://x3c51tgiudwg"

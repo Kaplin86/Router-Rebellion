@@ -1,10 +1,23 @@
 [gd_scene format=3 uid="uid://bmci4fvto72aa"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gve70"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.7012824, 0, 0.07109999, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [node name="GraphElement" type="GraphNode" unique_id=1650487266]
 anchors_preset = -1
-anchor_right = 0.16145833
-anchor_bottom = 0.12037037
+anchor_right = 0.3263889
+anchor_bottom = 0.25925925
+theme_override_styles/titlebar = SubResource("StyleBoxFlat_gve70")
 position_offset = Vector2(67, 111)
+resizable = true
 title = "Title goes here!"
 slot/0/left_enabled = true
 slot/0/left_type = 0
@@ -17,6 +30,13 @@ slot/0/right_icon = null
 slot/0/draw_stylebox = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="." unique_id=207511297]
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=933719067]
 layout_mode = 2
-text = "sfghdxsfghsfghsfgh"
+size_flags_vertical = 3
+mouse_filter = 1
+bbcode_enabled = true
+text = "Converts footsteps into energy"
+fit_content = true
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1

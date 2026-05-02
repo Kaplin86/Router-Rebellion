@@ -3,37 +3,27 @@
 [ext_resource type="Script" uid="uid://diqnci5ult8vm" path="res://scripts/resources/factoryNode.gd" id="1_x2uyr"]
 [ext_resource type="Script" uid="uid://b5g7uct24kvpm" path="res://scripts/resources/factorySave.gd" id="2_fb5lx"]
 
-[sub_resource type="Resource" id="Resource_4y15m"]
-script = ExtResource("1_x2uyr")
-type = "inventory"
-metadata/_custom_type_script = "uid://diqnci5ult8vm"
-
-[sub_resource type="Resource" id="Resource_2yvhw"]
-script = ExtResource("1_x2uyr")
-type = "splitter"
-metadata/_custom_type_script = "uid://diqnci5ult8vm"
-
-[sub_resource type="Resource" id="Resource_4mdys"]
-script = ExtResource("1_x2uyr")
-type = "output"
-metadata/_custom_type_script = "uid://diqnci5ult8vm"
-
 [sub_resource type="Resource" id="Resource_x2uyr"]
 script = ExtResource("1_x2uyr")
-type = "sigma"
+type = "Inventory"
+description = "Your gun inputs come from here!"
+canGetInput = false
+canDelete = false
+metadata/_custom_type_script = "uid://diqnci5ult8vm"
+
+[sub_resource type="Resource" id="Resource_fb5lx"]
+script = ExtResource("1_x2uyr")
+type = "Output"
+description = "Your factory outputs go here"
+maxOutCount = 0
+canDelete = false
 metadata/_custom_type_script = "uid://diqnci5ult8vm"
 
 [resource]
 script = ExtResource("2_fb5lx")
-nodes = Array[ExtResource("1_x2uyr")]([SubResource("Resource_4y15m"), SubResource("Resource_2yvhw"), SubResource("Resource_4mdys"), SubResource("Resource_x2uyr")])
+nodes = Array[ExtResource("1_x2uyr")]([SubResource("Resource_x2uyr"), SubResource("Resource_fb5lx")])
 nodePositions = Dictionary[ExtResource("1_x2uyr"), Vector2]({
-SubResource("Resource_4y15m"): Vector2(0, 0),
-SubResource("Resource_2yvhw"): Vector2(100, 0),
-SubResource("Resource_4mdys"): Vector2(200, 0),
-SubResource("Resource_x2uyr"): Vector2(0, 500)
-})
-nodeConnections = Dictionary[ExtResource("1_x2uyr"), Array]({
-SubResource("Resource_4y15m"): [SubResource("Resource_2yvhw")],
-SubResource("Resource_2yvhw"): [SubResource("Resource_4mdys")]
+SubResource("Resource_x2uyr"): Vector2(300, 300),
+SubResource("Resource_fb5lx"): Vector2(900, 300)
 })
 metadata/_custom_type_script = "uid://b5g7uct24kvpm"

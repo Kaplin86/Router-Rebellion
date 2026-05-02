@@ -17,6 +17,12 @@ var protectedTypes = ["inventory","output"]
 
 func _ready():
 	loadSave()
+	fillPopup()
+
+func fillPopup():
+	$PopupMenu.clear()
+	for I in References.factoryTypeToResource.keys():
+		$PopupMenu.add_item(I)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("delete"):
@@ -28,7 +34,7 @@ func _process(delta: float) -> void:
 		for delNode : GraphNode in currentSelectedNodes:
 			var resource : FactoryNode = resourceToNodes.find_key(delNode)
 			print("tryuing to delete", resource)
-			if not resource.type in protectedTypes:
+			if resource.canDelete:
 				
 				delNode.queue_free()
 				resourceToNodes.erase(resource)
@@ -65,10 +71,16 @@ func createNodeFromResource(I : FactoryNode):
 	
 	newNode.position_offset_changed.connect(onNodeDrag.bind(newNode))
 	
-	if I.type == "inventory":
-		newNode.set_slot_enabled_left(0,false)
-	if I.type == "output":
+	
+	newNode.title = I.type
+	newNode.get_titlebar_hbox().get_child(0).horizontal_alignment = 1
+	newNode.size = Vector2(376,168)
+	newNode.get_child(-1).text = I.description
+	
+	if I.maxOutCount == 0:
 		newNode.set_slot_enabled_right(0,false)
+	if !I.canGetInput:
+		newNode.set_slot_enabled_left(0,false)
 
 
 func onNodeDrag(node : GraphElement):
@@ -113,8 +125,7 @@ func _on_graph_edit_connection_to_empty(from_node: StringName, from_port: int, r
 	var result = await newPopup.index_pressed
 	
 	if result is int:
-		var newNode = FactoryNode.new()
-		newNode.type = $PopupMenu.get_item_text(result)
+		var newNode = References.createNewFactoryNodeFromType($PopupMenu.get_item_text(result))
 		save.nodes.append(newNode)
 		save.nodePositions[newNode] = release_position
 		createNodeFromResource(newNode)
