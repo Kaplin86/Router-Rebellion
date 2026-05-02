@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://udplv28tkqr7" path="res://scenes/player.tscn" id="1_ryjsw"]
 [ext_resource type="PackedScene" uid="uid://n8p1tds8xm7t" path="res://scenes/shaderCamera.tscn" id="2_pcu7d"]
+[ext_resource type="Script" uid="uid://byvc7b0buntrg" path="res://scripts/factory_menu_loader.gd" id="3_l6grw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pcu7d"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -55,3 +56,7 @@ drag = 7.0
 [node name="Camera3D" parent="." unique_id=1753978119 node_paths=PackedStringArray("targetObject") instance=ExtResource("2_pcu7d")]
 transform = Transform3D(-0.9989323, 0, 0.04619996, 0.029481877, 0.76992327, 0.6374551, -0.035570428, 0.63813657, -0.76910126, 0, 5.8841944, -7.106488)
 targetObject = NodePath("../CharacterBody3D")
+
+[node name="FactoryMenuLoader" type="CanvasLayer" parent="." unique_id=943258784]
+layer = 3
+script = ExtResource("3_l6grw")

@@ -1,11 +1,15 @@
 extends Node
 
+var currentFactorySave : FactorySave
+
 var factoryNodePaths = [
 	"res://data/factoryNodes/baseRefiner.tres",
 	"res://data/factoryNodes/baseSplitter.tres",
 	"res://data/factoryNodes/imbalanceSplitter.tres",
 	"res://data/factoryNodes/strongRefiner.tres"
 ]
+
+
 
 var factoryTypeToResource : Dictionary[String,FactoryNode]= {}
 
