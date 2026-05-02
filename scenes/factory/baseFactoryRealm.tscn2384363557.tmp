@@ -21,22 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-right_disconnects = true
-show_grid_buttons = false
-show_arrange_button = false
 
-[node name="PopupMenu" type="PopupMenu" parent="." unique_id=1288097300]
-oversampling_override = 1.0
-visible = true
-item_count = 3
-item_0/text = "Splitter"
-item_0/id = 0
-item_1/text = "Refiner"
-item_1/id = 1
-item_2/text = "Router"
-item_2/id = 2
-
-[connection signal="connection_from_empty" from="GraphEdit" to="." method="_on_graph_edit_connection_from_empty"]
 [connection signal="connection_request" from="GraphEdit" to="." method="_on_graph_edit_connection_request"]
-[connection signal="connection_to_empty" from="GraphEdit" to="." method="_on_graph_edit_connection_to_empty"]
-[connection signal="disconnection_request" from="GraphEdit" to="." method="_on_graph_edit_disconnection_request"]
+[connection signal="node_deselected" from="GraphEdit" to="." method="deselect"]
+[connection signal="node_selected" from="GraphEdit" to="." method="select"]
