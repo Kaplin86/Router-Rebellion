@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AdderNode" format=3 uid="uid://blri5mkwu3rv5"]
+
+[ext_resource type="Script" uid="uid://dwojhyv5oh6wx" path="res://scripts/resources/factoryNodeVariants/adder.gd" id="1_k01q2"]
+
+[resource]
+script = ExtResource("1_k01q2")
+size = 0.5
+type = "Grower"
+description = "Uses [rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]magic[/rainbow] to increase the input size by [color=yellow]0.5[/color]"
+metadata/_custom_type_script = "uid://dwojhyv5oh6wx"

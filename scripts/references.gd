@@ -7,7 +7,11 @@ var factoryNodePaths = [
 	"res://data/factoryNodes/baseSplitter.tres",
 	"res://data/factoryNodes/imbalanceSplitter.tres",
 	"res://data/factoryNodes/strongRefiner.tres",
-	"res://data/factoryNodes/accelerator.tres"
+	"res://data/factoryNodes/accelerator.tres",
+	"res://data/factoryNodes/balancer.tres",
+	"res://data/factoryNodes/grower.tres"
+	
+	
 	
 ]
 

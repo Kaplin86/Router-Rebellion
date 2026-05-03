@@ -43,7 +43,7 @@ func shoot(bullets: Array[BulletPayload]):
 		get_parent().add_sibling(newBullet)
 		newBullet.global_position = shootPos.global_position
 		newBullet.global_rotation = shootPos.global_rotation
-		var bulletSpread = lerp(I.spread,spread,0.5)
+		var bulletSpread = I.spread
 		newBullet.global_rotation.y += deg_to_rad(randf_range(-bulletSpread,bulletSpread))
 		newBullet.scale = lerp(Vector3(I.size,I.size,I.size),Vector3.ONE,0.5)
 		newBullet.speed = I.speed

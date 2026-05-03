@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SetterNode" format=3 uid="uid://cjci1jywwxm0f"]
+
+[ext_resource type="Script" uid="uid://bwfjahslw6cht" path="res://scripts/resources/factoryNodeVariants/setter.gd" id="1_rdi3r"]
+
+[resource]
+script = ExtResource("1_rdi3r")
+spread = 2.0
+type = "Balancer"
+description = "Sets the spread of the input to [color=yellow]2°[/color]"
+metadata/_custom_type_script = "uid://bwfjahslw6cht"

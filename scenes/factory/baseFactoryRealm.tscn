@@ -35,16 +35,26 @@ item_1/id = 1
 item_2/text = "Router"
 item_2/id = 2
 
-[node name="Button" type="Button" parent="." unique_id=2143074989]
+[node name="Control" type="Control" parent="." unique_id=178222106]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Button" type="Button" parent="Control" unique_id=2143074989]
 layout_mode = 0
-offset_left = 1016.0
-offset_top = 5.0
-offset_right = 1139.0
-offset_bottom = 36.0
+anchor_left = 0.8819444
+anchor_top = 0.0077160494
+anchor_right = 0.9887153
+anchor_bottom = 0.055555556
 text = "SAVE AND EXIT"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="connection_from_empty" from="GraphEdit" to="." method="_on_graph_edit_connection_from_empty"]
 [connection signal="connection_request" from="GraphEdit" to="." method="_on_graph_edit_connection_request"]
 [connection signal="connection_to_empty" from="GraphEdit" to="." method="_on_graph_edit_connection_to_empty"]
 [connection signal="disconnection_request" from="GraphEdit" to="." method="_on_graph_edit_disconnection_request"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
