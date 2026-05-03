@@ -58,5 +58,6 @@ transform = Transform3D(-0.9989323, 0, 0.04619996, 0.029481877, 0.76992327, 0.63
 targetObject = NodePath("../CharacterBody3D")
 
 [node name="FactoryMenuLoader" type="CanvasLayer" parent="." unique_id=943258784]
+process_mode = 3
 layer = 3
 script = ExtResource("3_l6grw")

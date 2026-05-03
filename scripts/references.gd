@@ -6,7 +6,9 @@ var factoryNodePaths = [
 	"res://data/factoryNodes/baseRefiner.tres",
 	"res://data/factoryNodes/baseSplitter.tres",
 	"res://data/factoryNodes/imbalanceSplitter.tres",
-	"res://data/factoryNodes/strongRefiner.tres"
+	"res://data/factoryNodes/strongRefiner.tres",
+	"res://data/factoryNodes/accelerator.tres"
+	
 ]
 
 
@@ -16,6 +18,17 @@ var factoryTypeToResource : Dictionary[String,FactoryNode]= {}
 func _ready() -> void:
 	setupFactoryNodeDefinitions()
 	print(factoryTypeToResource)
+	loadFactoryFromFile()
+
+func loadFactoryFromFile():
+	var filePath = ProjectSettings.globalize_path("user://factorySave.tres")
+	if FileAccess.file_exists(filePath):
+		var resource = ResourceLoader.load(filePath)
+		currentFactorySave = resource.duplicate(true)
+	else:
+		var resource = load("res://data/startingFactory.tres")
+		currentFactorySave = resource.duplicate(true)
+
 
 func setupFactoryNodeDefinitions():
 	for I in factoryNodePaths:
@@ -27,7 +40,7 @@ func createNewFactoryNodeFromType(type : String):
 		return factoryTypeToResource[type].duplicate()
 	return null
 
-var finalBullets = []
+var finalBullets : Array[BulletPayload] = []
 func runFactorySave(save : FactorySave, input : BulletPayload):
 	finalBullets.clear()
 	var startingNode : FactoryNode = null
