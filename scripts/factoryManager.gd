@@ -17,7 +17,7 @@ var protectedTypes = ["inventory","output"]
 signal closed
 
 func _ready():
-	#loadSave()
+	loadSave()
 	fillPopup()
 
 func fillPopup():
