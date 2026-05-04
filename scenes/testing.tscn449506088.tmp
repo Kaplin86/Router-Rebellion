@@ -3,8 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://udplv28tkqr7" path="res://scenes/player.tscn" id="1_ryjsw"]
 [ext_resource type="PackedScene" uid="uid://n8p1tds8xm7t" path="res://scenes/shaderCamera.tscn" id="2_pcu7d"]
 [ext_resource type="Script" uid="uid://byvc7b0buntrg" path="res://scripts/factory_menu_loader.gd" id="3_l6grw"]
-[ext_resource type="PackedScene" uid="uid://cgo16wfjsny5p" path="res://scenes/testEnemy.tscn" id="4_3dx25"]
-[ext_resource type="Script" uid="uid://kl3h2u0d8rl2" path="res://scripts/dpsTracker.gd" id="4_nuoa6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3dx25"]
 albedo_color = Color(0, 0.64705884, 0.08627451, 1)
@@ -83,66 +81,14 @@ data = {
 environment = SubResource("Environment_3dx25")
 
 [node name="CharacterBody3D" parent="." unique_id=1044230419 instance=ExtResource("1_ryjsw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5087013, 2.662352, 8.735026)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.208699, 0)
 drag = 7.0
 
 [node name="Camera3D" parent="." unique_id=1753978119 node_paths=PackedStringArray("targetObject") instance=ExtResource("2_pcu7d")]
-transform = Transform3D(-0.2170378, -0.6175868, 0.75596374, 0.029481882, 0.7699233, 0.6374553, -0.9757181, 0.1606391, -0.14889482, 8.083534, 5.8841944, -4.041705)
+transform = Transform3D(-0.0040360694, 0.63781893, -0.7701758, 0.029481879, 0.7699232, 0.6374552, 0.9995572, -0.020133415, -0.021911563, 8.083534, 5.8841944, -4.041705)
 targetObject = NodePath("../CharacterBody3D")
 
 [node name="FactoryMenuLoader" type="CanvasLayer" parent="." unique_id=943258784]
 process_mode = 3
 layer = 3
 script = ExtResource("3_l6grw")
-
-[node name="Label3D" type="Label3D" parent="." unique_id=172530241]
-transform = Transform3D(0.018320572, -0.3574227, 0.93376297, 0.0070113386, 0.93394274, 0.35735393, -0.99980754, 0, 0.019616377, 0, 3.8847237, 0)
-render_priority = 2
-text = "Hi!! welcome to my first lil tech demo of \"router rebellion\"
-This build contains the main combat gimmick: Bullet Building.
-Press Q to open the menu!"
-font_size = 106
-
-[node name="Label3D2" type="Label3D" parent="." unique_id=2120117659]
-transform = Transform3D(0.018320572, -0.3574227, 0.93376297, 0.0070113386, 0.93394274, 0.35735393, -0.99980754, 0, 0.019616377, -15.936796, 3.8847237, -1.8102975)
-render_priority = 2
-text = "Please dont fall i do not have a safety net lol"
-font_size = 106
-
-[node name="Label3D3" type="Label3D" parent="." unique_id=1179161513]
-transform = Transform3D(0.018320572, -0.3574227, 0.93376297, 0.0070113386, 0.93394274, 0.35735393, -0.99980754, 0, 0.019616377, -29.689095, 3.8847237, -11.359098)
-render_priority = 2
-text = "these are enemies
-(they are dumb right now)"
-font_size = 106
-
-[node name="Label3D4" type="Label3D" parent="." unique_id=1793527921]
-transform = Transform3D(0.018320572, -0.3574227, 0.93376297, 0.0070113386, 0.93394274, 0.35735393, -0.99980754, 0, 0.019616377, -5.4145403, 3.8847227, -34.27082)
-render_priority = 2
-text = "DPS testing zone"
-font_size = 106
-
-[node name="Label3D5" type="Label3D" parent="." unique_id=1845992396 node_paths=PackedStringArray("dummyEnemy")]
-transform = Transform3D(0.018320572, -0.3574227, 0.93376297, 0.0070113386, 0.93394274, 0.35735393, -0.99980754, 0, 0.019616377, -5.0099144, 3.460351, -34.098034)
-render_priority = 2
-text = "DPS testing zone"
-font_size = 106
-script = ExtResource("4_nuoa6")
-dummyEnemy = NodePath("../CharacterBody3D6")
-
-[node name="CharacterBody3D2" parent="." unique_id=69555869 instance=ExtResource("4_3dx25")]
-transform = Transform3D(0.7350566, 0, 0.6780058, 0, 1, 0, -0.6780058, 0, 0.7350566, -31.521465, 2.5, -2.56049)
-
-[node name="CharacterBody3D3" parent="." unique_id=333422114 instance=ExtResource("4_3dx25")]
-transform = Transform3D(0.6352968, 0, -0.77226806, 0, 1, 0, 0.77226806, 0, 0.6352968, -34.746765, 2.5, -3.4153786)
-
-[node name="CharacterBody3D4" parent="." unique_id=1270277426 instance=ExtResource("4_3dx25")]
-transform = Transform3D(-0.99949396, 0, 0.031811953, 0, 1, 0, -0.031811953, 0, -0.99949396, -33.250195, 2.5, -7.2154036)
-
-[node name="CharacterBody3D5" parent="." unique_id=2033134053 instance=ExtResource("4_3dx25")]
-transform = Transform3D(-0.70541406, 0, -0.7087956, 0, 1, 0, 0.7087956, 0, -0.70541406, -34.986843, 2.5, -5.678364)
-
-[node name="CharacterBody3D6" parent="." unique_id=654221772 instance=ExtResource("4_3dx25")]
-transform = Transform3D(-2.677046, 0, -2.689879, 0, 3.795, 0, 2.689879, 0, -2.677046, -3.3133912, 4.970928, -41.005573)
-hp = 10000000000000
-maxhp = 10000000000000

@@ -46,7 +46,7 @@ func shoot(bullets: Array[BulletPayload]):
 		var bulletSpread = I.spread
 		newBullet.global_rotation.y += deg_to_rad(randf_range(-bulletSpread,bulletSpread))
 		newBullet.scale = lerp(Vector3(I.size,I.size,I.size),Vector3.ONE,0.5)
-		newBullet.speed = I.speed
+		newBullet.payload = I
 
 func _resetCooldown():
 	canFire = true

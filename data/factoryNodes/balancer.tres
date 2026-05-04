@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_rdi3r")
-spread = 2.0
+spread = 1.0
 type = "Balancer"
-description = "Sets the spread of the input to [color=yellow]2°[/color]"
+description = "Sets the spread of the input to [color=yellow]1°[/color]"
 metadata/_custom_type_script = "uid://bwfjahslw6cht"

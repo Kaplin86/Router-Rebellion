@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cgo16wfjsny5p"]
+
+[ext_resource type="Script" uid="uid://cdnxm23i1wgaw" path="res://scripts/baseEnemy.gd" id="1_vj8yi"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vj8yi"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hvovt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u8vuu"]
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+disable_receive_shadows = true
+
+[sub_resource type="PrismMesh" id="PrismMesh_pwrsv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpg2y"]
+shading_mode = 0
+albedo_color = Color(0.5176471, 1, 1, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vj8yi"]
+viewport_path = NodePath("SubViewport")
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=69555869 node_paths=PackedStringArray("healthBar")]
+script = ExtResource("1_vj8yi")
+healthBar = NodePath("SubViewport/ProgressBar")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=24376320]
+shape = SubResource("CapsuleShape3D_vj8yi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1046656089]
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_hvovt")
+surface_material_override/0 = SubResource("StandardMaterial3D_u8vuu")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1825009545]
+transform = Transform3D(-1.1421661e-08, 7.2912627e-09, 0.30999994, 0.16680464, 0.26129714, 0, -0.26129714, 0.16680464, -1.3550528e-08, -0.016549349, 0.6428207, -0.48219895)
+cast_shadow = 0
+mesh = SubResource("PrismMesh_pwrsv")
+surface_material_override/0 = SubResource("StandardMaterial3D_jpg2y")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1040780982]
+transparent_bg = true
+size = Vector2i(286, 30)
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport" unique_id=233522323]
+offset_right = 285.0
+offset_bottom = 30.0
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1760199280]
+transform = Transform3D(0.64, 0, 0, 0, 1.661613, 0, 0, 0, 0.64, 0, 1.2945946, 0)
+billboard = 1
+render_priority = 1
+texture = SubResource("ViewportTexture_vj8yi")
