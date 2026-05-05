@@ -82,13 +82,13 @@ data = {
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=962332216]
 environment = SubResource("Environment_3dx25")
 
-[node name="CharacterBody3D" parent="." unique_id=1044230419 instance=ExtResource("1_ryjsw")]
+[node name="Player" parent="." unique_id=1044230419 instance=ExtResource("1_ryjsw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5087013, 2.662352, 8.735026)
 drag = 7.0
 
 [node name="Camera3D" parent="." unique_id=1753978119 node_paths=PackedStringArray("targetObject") instance=ExtResource("2_pcu7d")]
 transform = Transform3D(-0.2170378, -0.6175868, 0.75596374, 0.029481882, 0.7699233, 0.6374553, -0.9757181, 0.1606391, -0.14889482, 8.083534, 5.8841944, -4.041705)
-targetObject = NodePath("../CharacterBody3D")
+targetObject = NodePath("../Player")
 
 [node name="FactoryMenuLoader" type="CanvasLayer" parent="." unique_id=943258784]
 process_mode = 3

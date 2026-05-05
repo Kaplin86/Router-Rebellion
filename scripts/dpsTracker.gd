@@ -10,4 +10,3 @@ func _process(delta):
 		var difference = damageLast - dummyEnemy.hp
 		damageLast = dummyEnemy.hp
 		text = str(difference)
-		print(dummyEnemy.hp)
