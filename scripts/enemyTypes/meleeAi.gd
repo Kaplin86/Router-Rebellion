@@ -15,6 +15,8 @@ func targetingBehavior(delta):
 	if !agent:
 		agent = NavigationAgent3D.new()
 		add_child(agent)
+		agent.avoidance_enabled = true
+		agent.radius = 1
 	
 	agent.target_position = targetedPlayer.global_position
 	

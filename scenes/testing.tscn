@@ -9,8 +9,8 @@
 [ext_resource type="Script" uid="uid://clmre742s2lff" path="res://scripts/enemyTypes/meleeAi.gd" id="6_kri1i"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_5qbqa"]
-vertices = PackedVector3Array(-10.25, 4.5, -19.5, -10.5, 4.5, -23.5, -11.5, 4.5, -23.5, -11.5, 4.5, -18.5, 16.5, 4.5, -48.25, 16.5, 4.5, -19.75, 17.5, 4.5, -18.5, 17.5, 4.5, -49.5, -11.5, 4.5, -28.5, -10.5, 4.5, -28.5, -10.25, 4.5, -48.5, -11.5, 4.5, -49.5, -9.75, 2, -27.25, -11.5, 2, -27.25, -11.25, 2, -24.5, -9.25, 2, -24.25, 15.5, 2, -47.25, -9.25, 2, -47.25, -9.25, 2, -27.75, 15.5, 2, -20.5, -9.25, 2, -20.5, -30.5, 2, -24.25, -28.25, 2, -24.5, -28.25, 2, -27.5, -33.5, 2, -27.5, -33.25, 2, -11.5, -30.5, 2, -11.25, -26.5, 4.5, -3.5, -27.5, 4.5, -3.5, -27.75, 4.5, 0.5, -26.5, 4.5, 1.5, -38.5, 4.5, 0.25, -38.5, 4.5, -10.25, -39.5, 4.5, -11.5, -39.5, 4.5, 1.5, -34.5, 4.5, -10.5, -34.5, 4.5, -11.5, -33.25, 2, -9.75, -30.5, 2, -9.5, -33.75, 2, -9.25, -37.25, 2, -9.25, -37.25, 2, -0.5, -28.5, 2, -0.5, -28.5, 2, -4.25, -28.25, 2, -7.25, -28.5, 2, -9.25, -26.5, 2, -4.5, -26.5, 2, -7.25, -29.5, 4.5, -11.5, -29.5, 4.5, -10.5, -27.75, 4.5, -10.5, -26.5, 4.5, -11.5, -27.5, 4.5, -8.5, -26.5, 4.5, -8.5, -15.5, 4.5, -8.5, -14.5, 4.5, -8.5, -14.25, 4.5, -10.5, -15.5, 4.5, -11.5, 11.5, 4.5, -11.5, 10.5, 4.5, -10.25, -14.25, 4.5, 14.5, -14.5, 4.5, -3.5, -15.5, 4.5, -3.5, -15.5, 4.5, 15.5, 10.25, 4.5, 14.5, 11.5, 4.5, 15.5, -13.75, 2, -7.25, -15.5, 2, -7.25, -15.25, 2, -4.5, -13.25, 2, -4.25, -13.25, 2, 13.5, 9.5, 2, 13.5, 9.5, 2, -9.25, -13.25, 2, -7.75, -13.25, 2, -9.25)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(4, 7, 5), PackedInt32Array(5, 7, 6), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(4, 10, 7), PackedInt32Array(7, 10, 11), PackedInt32Array(5, 6, 0), PackedInt32Array(0, 6, 3), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(12, 18, 15), PackedInt32Array(15, 18, 19), PackedInt32Array(19, 20, 15), PackedInt32Array(22, 21, 23), PackedInt32Array(23, 21, 24), PackedInt32Array(26, 25, 21), PackedInt32Array(21, 25, 24), PackedInt32Array(23, 13, 22), PackedInt32Array(22, 13, 14), PackedInt32Array(28, 27, 29), PackedInt32Array(29, 27, 30), PackedInt32Array(31, 34, 32), PackedInt32Array(32, 34, 33), PackedInt32Array(35, 32, 36), PackedInt32Array(36, 32, 33), PackedInt32Array(31, 29, 34), PackedInt32Array(34, 29, 30), PackedInt32Array(38, 37, 26), PackedInt32Array(26, 37, 25), PackedInt32Array(39, 43, 40), PackedInt32Array(40, 43, 42), PackedInt32Array(40, 42, 41), PackedInt32Array(37, 38, 39), PackedInt32Array(39, 38, 45), PackedInt32Array(39, 45, 44), PackedInt32Array(39, 44, 43), PackedInt32Array(47, 46, 44), PackedInt32Array(44, 46, 43), PackedInt32Array(49, 48, 50), PackedInt32Array(50, 48, 51), PackedInt32Array(52, 50, 53), PackedInt32Array(53, 50, 51), PackedInt32Array(55, 54, 56), PackedInt32Array(56, 54, 57), PackedInt32Array(59, 56, 58), PackedInt32Array(58, 56, 57), PackedInt32Array(61, 60, 62), PackedInt32Array(62, 60, 63), PackedInt32Array(64, 59, 65), PackedInt32Array(65, 59, 58), PackedInt32Array(64, 65, 60), PackedInt32Array(60, 65, 63), PackedInt32Array(67, 66, 68), PackedInt32Array(68, 66, 69), PackedInt32Array(70, 69, 71), PackedInt32Array(71, 69, 72), PackedInt32Array(66, 73, 69), PackedInt32Array(69, 73, 72), PackedInt32Array(73, 74, 72), PackedInt32Array(47, 67, 46), PackedInt32Array(46, 67, 68)]
+vertices = PackedVector3Array(-10.25, 4.5, -19.5, -10.5, 4.5, -23.5, -11.5, 4.5, -23.5, -11.5, 4.5, -18.5, 16.5, 4.5, -48.25, 16.5, 4.5, -19.75, 17.5, 4.5, -18.5, 17.5, 4.5, -49.5, -11.5, 4.5, -28.5, -10.5, 4.5, -28.5, -10.25, 4.5, -48.5, -11.5, 4.5, -49.5, -9.75, 2, -27.25, -11.5, 2, -27.25, -11.25, 2, -24.5, -9.25, 2, -24.25, 15.5, 2, -47.25, -9.25, 2, -47.25, -9.25, 2, -27.75, 15.5, 2, -20.5, -9.25, 2, -20.5, -28.25, 2, -7.25, -28.5, 2, -9.25, -30.5, 2, -9.5, -33.25, 2, -9.75, -33.75, 2, -9.25, -28.25, 2, -4.5, -37.25, 2, -9.25, -37.25, 2, -0.5, -28.5, 2, -0.5, -13.75, 2, -7.25, -13.5, 2, -4.5, -13.25, 2, -7.75, -13.25, 2, 13.5, 9.5, 2, 13.5, 9.5, 2, -9.25, -30.25, 2, -24.5, -33.5, 2, -27.5, -13.25, 2, -9.25, -26.5, 4.5, -3.5, -27.5, 4.5, -3.5, -27.75, 4.5, 0.5, -26.5, 4.5, 1.5, -38.5, 4.5, 0.25, -38.5, 4.5, -10.25, -39.5, 4.5, -11.5, -39.5, 4.5, 1.5, -34.5, 4.5, -10.5, -34.5, 4.5, -11.5, -29.5, 4.5, -11.5, -29.5, 4.5, -10.5, -27.75, 4.5, -10.5, -26.5, 4.5, -11.5, -27.5, 4.5, -8.5, -26.5, 4.5, -8.5, -15.5, 4.5, -8.5, -14.5, 4.5, -8.5, -14.25, 4.5, -10.5, -15.5, 4.5, -11.5, 11.5, 4.5, -11.5, 10.5, 4.5, -10.25, -14.25, 4.5, 14.5, -14.5, 4.5, -3.5, -15.5, 4.5, -3.5, -15.5, 4.5, 15.5, 10.25, 4.5, 14.5, 11.5, 4.5, 15.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(4, 7, 5), PackedInt32Array(5, 7, 6), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(4, 10, 7), PackedInt32Array(7, 10, 11), PackedInt32Array(5, 6, 0), PackedInt32Array(0, 6, 3), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(12, 18, 15), PackedInt32Array(15, 18, 19), PackedInt32Array(19, 20, 15), PackedInt32Array(24, 23, 25), PackedInt32Array(25, 23, 22), PackedInt32Array(25, 22, 21), PackedInt32Array(25, 21, 26), PackedInt32Array(25, 26, 27), PackedInt32Array(27, 26, 29), PackedInt32Array(27, 29, 28), PackedInt32Array(21, 30, 26), PackedInt32Array(26, 30, 31), PackedInt32Array(31, 30, 32), PackedInt32Array(31, 32, 33), PackedInt32Array(33, 32, 34), PackedInt32Array(34, 32, 35), PackedInt32Array(14, 36, 13), PackedInt32Array(13, 36, 37), PackedInt32Array(32, 38, 35), PackedInt32Array(23, 24, 36), PackedInt32Array(36, 24, 37), PackedInt32Array(40, 39, 41), PackedInt32Array(41, 39, 42), PackedInt32Array(43, 46, 44), PackedInt32Array(44, 46, 45), PackedInt32Array(47, 44, 48), PackedInt32Array(48, 44, 45), PackedInt32Array(43, 41, 46), PackedInt32Array(46, 41, 42), PackedInt32Array(50, 49, 51), PackedInt32Array(51, 49, 52), PackedInt32Array(53, 51, 54), PackedInt32Array(54, 51, 52), PackedInt32Array(56, 55, 57), PackedInt32Array(57, 55, 58), PackedInt32Array(60, 57, 59), PackedInt32Array(59, 57, 58), PackedInt32Array(62, 61, 63), PackedInt32Array(63, 61, 64), PackedInt32Array(65, 60, 66), PackedInt32Array(66, 60, 59), PackedInt32Array(65, 66, 61), PackedInt32Array(61, 66, 64)]
 geometry_parsed_geometry_type = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3dx25"]
@@ -97,9 +97,11 @@ data = {
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=962332216]
 environment = SubResource("Environment_3dx25")
 
-[node name="Player" parent="." unique_id=1044230419 instance=ExtResource("1_ryjsw")]
+[node name="Player" parent="." unique_id=1044230419 node_paths=PackedStringArray("uiManager") instance=ExtResource("1_ryjsw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5087013, 2.662352, 8.735026)
 drag = 7.0
+uiManager = NodePath("../Control")
+team = 1
 
 [node name="Control" type="Control" parent="." unique_id=1941928461 node_paths=PackedStringArray("player", "healthBar", "statusLog")]
 layout_mode = 3
@@ -122,17 +124,34 @@ anchor_right = 0.9835069
 anchor_bottom = 0.9814815
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=36406786]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.7682292
-anchor_top = 0.27006173
+anchor_top = -0.64660496
 anchor_right = 0.9817708
 anchor_bottom = 0.92901236
 alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Control/VBoxContainer" unique_id=897053294]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer/Panel" unique_id=1621857014]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "HGHSGFHSGFH"
 
 [node name="TextureRect" type="TextureRect" parent="Control" unique_id=1018866314]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Camera3D" parent="." unique_id=1753978119 node_paths=PackedStringArray("targetObject") instance=ExtResource("2_pcu7d")]
 transform = Transform3D(-0.2170378, -0.6175868, 0.75596374, 0.029481882, 0.7699233, 0.6374553, -0.9757181, 0.1606391, -0.14889482, 8.083534, 5.8841944, -4.041705)
@@ -178,9 +197,6 @@ font_size = 106
 script = ExtResource("4_nuoa6")
 dummyEnemy = NodePath("../CharacterBody3D6")
 
-[node name="CharacterBody3D2" parent="." unique_id=69555869 instance=ExtResource("4_3dx25")]
-transform = Transform3D(0.7350566, 0, 0.6780058, 0, 1, 0, -0.6780058, 0, 0.7350566, -31.521465, 2.5, -2.56049)
-
 [node name="CharacterBody3D3" parent="." unique_id=333422114 instance=ExtResource("4_3dx25")]
 transform = Transform3D(0.6352968, 0, -0.77226806, 0, 1, 0, 0.77226806, 0, 0.6352968, -34.746765, 2.5, -3.4153786)
 script = ExtResource("6_kri1i")
@@ -190,13 +206,34 @@ attackRange = 5
 baseDamage = 5
 randomDamageFactor = 0.15
 
-[node name="CharacterBody3D4" parent="." unique_id=1270277426 instance=ExtResource("4_3dx25")]
-transform = Transform3D(-0.99949396, 0, 0.031811953, 0, 1, 0, -0.031811953, 0, -0.99949396, -33.250195, 2.5, -7.2154036)
+[node name="CharacterBody3D4" parent="." unique_id=69555869 instance=ExtResource("4_3dx25")]
+transform = Transform3D(-0.03791693, 0, -0.99928087, 0, 1, 0, 0.99928087, 0, -0.03791693, -33.74184, 2.5, -7.189226)
+script = ExtResource("6_kri1i")
+movementSpeed = 200
+attackSpeed = 0.6
+attackRange = 5
+baseDamage = 5
+randomDamageFactor = 0.15
 
-[node name="CharacterBody3D5" parent="." unique_id=2033134053 instance=ExtResource("4_3dx25")]
-transform = Transform3D(-0.70541406, 0, -0.7087956, 0, 1, 0, 0.7087956, 0, -0.70541406, -34.986843, 2.5, -5.678364)
+[node name="CharacterBody3D5" parent="." unique_id=1895944031 instance=ExtResource("4_3dx25")]
+transform = Transform3D(0.97273946, 0, -0.23190066, 0, 1, 0, 0.23190066, 0, 0.97273946, -31.240685, 2.5, -1.846158)
+script = ExtResource("6_kri1i")
+movementSpeed = 200
+attackSpeed = 0.6
+attackRange = 5
+baseDamage = 5
+randomDamageFactor = 0.15
+
+[node name="CharacterBody3D7" parent="." unique_id=839934690 instance=ExtResource("4_3dx25")]
+transform = Transform3D(-0.97705674, 0, 0.21297929, 0, 1, 0, -0.21297929, 0, -0.97705674, -30.262476, 2.5000005, -7.790496)
+script = ExtResource("6_kri1i")
+movementSpeed = 200
+attackSpeed = 0.6
+attackRange = 5
+baseDamage = 5
+randomDamageFactor = 0.15
 
 [node name="CharacterBody3D6" parent="." unique_id=654221772 instance=ExtResource("4_3dx25")]
 transform = Transform3D(-2.677046, 0, -2.689879, 0, 3.795, 0, 2.689879, 0, -2.677046, -3.3133912, 4.970928, -41.005573)
-hp = 10000000000000
-maxhp = 10000000000000
+Hp = 100000000
+MaxHp = 100000000

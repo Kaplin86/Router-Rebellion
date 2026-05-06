@@ -1,8 +1,11 @@
 extends Area3D
+class_name BulletObject
 
 var payload : BulletPayload
 
 var raycast : ShapeCast3D = null
+
+var team = 0
 
 func _ready():
 	raycast = ShapeCast3D.new()
@@ -25,11 +28,10 @@ func _process(delta):
 	global_position += targetPos
 
 func destroyableColider(obj):
-
-	if obj is PlayerCharacter:
+	if obj is BaseAttackable:
+		if obj.team != team:
+			var damage = payload.baseDamage * sqrt(payload.speed) * payload.size 
+			obj.takeDamage(damage,payload)
+			return true
 		return false
-	if obj is BaseEnemy:
-		var damage = payload.baseDamage * sqrt(payload.speed) * payload.size 
-		obj.hp -= damage
-		
 	return true

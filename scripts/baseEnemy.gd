@@ -1,24 +1,23 @@
-extends CharacterBody3D
+extends BaseAttackable
 class_name BaseEnemy
 
-@export var hp = 20
-@export var maxhp = 20
 @export var detectionRange = 15
 
 @export_category("nodes")
 @export var healthBar : ProgressBar
-@export var animationPlayer : AnimationPlayer
 
 var collisionArea : Area3D
 var targetedPlayer : PlayerCharacter
 var targeting = false
 
+
+
 func _ready():
 	createArea(detectionRange)
 
 func _process(delta):
-	healthBar.max_value = maxhp
-	healthBar.value = hp
+	healthBar.max_value = MaxHp
+	healthBar.value = Hp
 	checkDeath()
 	
 	if targeting:
@@ -29,7 +28,7 @@ func targetingBehavior(delta):
 
 
 func checkDeath():
-	if hp <= 0:
+	if Hp <= 0:
 		queue_free()
 		process_mode = Node.PROCESS_MODE_DISABLED
 
@@ -48,8 +47,3 @@ func onEnter(body : Node3D):
 	if body is PlayerCharacter:
 		targetedPlayer = body
 		targeting = true
-
-func playAnimation(animationName):
-	if animationPlayer:
-		if animationPlayer.has_animation(animationName):
-			animationPlayer.play(animationName)

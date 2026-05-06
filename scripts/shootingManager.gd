@@ -9,7 +9,7 @@ extends Node
 @onready var baseBullet = preload("res://scenes/bullet.tscn")
 
 
-
+var plyr : PlayerCharacter
 var canFire = true
 
 
@@ -20,7 +20,7 @@ func _ready():
 	cooldown.timeout.connect(_resetCooldown)
 	
 	
-	
+	plyr = get_parent()
 
 
 
@@ -38,17 +38,21 @@ func getFinalPayloads(bullets: Array[BulletPayload]):
 	return bullets
 
 func shoot(bullets: Array[BulletPayload]):
+	plyr.uiManager.addStatus("Hi" + str(randi()))
 	canFire = false
 	cooldown.start()
 	for I in bullets:
-		var newBullet : Node3D = baseBullet.instantiate()
+		var newBullet : BulletObject = baseBullet.instantiate()
+		newBullet.team = plyr.team
 		get_parent().add_sibling(newBullet)
 		newBullet.global_position = shootPos.global_position
+		newBullet.global_position.y += 0.2
 		newBullet.global_rotation = shootPos.global_rotation
 		var bulletSpread = I.spread
 		newBullet.global_rotation.y += deg_to_rad(randf_range(-bulletSpread,bulletSpread))
 		newBullet.scale = lerp(Vector3(I.size,I.size,I.size),Vector3.ONE,0.5)
 		newBullet.payload = I
+
 
 func _resetCooldown():
 	canFire = true
