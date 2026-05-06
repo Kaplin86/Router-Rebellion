@@ -27,7 +27,9 @@ func _ready():
 func _process(delta):
 	if canFire:
 		if Input.is_action_pressed("shoot"):
-			var value : Array[BulletPayload] = References.runFactorySave(References.currentFactorySave,BulletPayload.new())
+			var payload = BulletPayload.new()
+			var value : Array[BulletPayload] = References.runFactorySave(References.currentFactorySave,payload)
+			
 			value = getFinalPayloads(value)
 			shoot(value)
 

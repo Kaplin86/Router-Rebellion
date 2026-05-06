@@ -19,6 +19,7 @@ func _process(delta):
 	if raycast.get_collision_count() != 0:
 		var collider = raycast.get_collider(0)
 		if destroyableColider(collider):
+			print("dying from collider", collider)
 			queue_free()
 	
 	global_position += targetPos
@@ -28,6 +29,7 @@ func destroyableColider(obj):
 	if obj is PlayerCharacter:
 		return false
 	if obj is BaseEnemy:
-		obj.hp -= payload.baseDamage
+		var damage = payload.baseDamage * sqrt(payload.speed) * payload.size 
+		obj.hp -= damage
 		
 	return true

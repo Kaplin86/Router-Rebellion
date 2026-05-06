@@ -5,7 +5,9 @@ class_name BaseEnemy
 @export var maxhp = 20
 @export var detectionRange = 15
 
+@export_category("nodes")
 @export var healthBar : ProgressBar
+@export var animationPlayer : AnimationPlayer
 
 var collisionArea : Area3D
 var targetedPlayer : PlayerCharacter
@@ -20,7 +22,11 @@ func _process(delta):
 	checkDeath()
 	
 	if targeting:
-		look_at(targetedPlayer.global_position)
+		targetingBehavior(delta)
+
+func targetingBehavior(delta):
+	look_at(targetedPlayer.global_position)
+
 
 func checkDeath():
 	if hp <= 0:
@@ -42,3 +48,8 @@ func onEnter(body : Node3D):
 	if body is PlayerCharacter:
 		targetedPlayer = body
 		targeting = true
+
+func playAnimation(animationName):
+	if animationPlayer:
+		if animationPlayer.has_animation(animationName):
+			animationPlayer.play(animationName)

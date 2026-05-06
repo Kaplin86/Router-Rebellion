@@ -3,6 +3,8 @@ class_name PlayerCharacter
 
 @export var playerSpeed : float = 6
 @export var drag : float = 2
+@export var hp = 50
+@export var maxHp = 50
 
 func _process(delta):
 	var inputLR = Input.get_axis("east","west")
@@ -31,3 +33,6 @@ func turnToMouse():
 	if position3D:
 		var newPosition = Vector3(position3D.x,global_position.y,position3D.z)
 		look_at(newPosition)
+
+func takeDamage(damage : float):
+	hp -= damage

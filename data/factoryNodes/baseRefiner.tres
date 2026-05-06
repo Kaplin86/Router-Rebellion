@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_itv7p")
+damageChange = 1.2
 type = "Refiner"
-description = "Decreases the size of the input by [color=yellow]x0.9[/color] and increases the damage by [color=yellow]x1.1[/color] "
+description = "Decreases the size of the input by [color=yellow]x0.9[/color] and increases the damage by [color=yellow]x1.2[/color] "
 metadata/_custom_type_script = "uid://x3c51tgiudwg"

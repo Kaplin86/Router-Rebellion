@@ -20,9 +20,37 @@ albedo_color = Color(0.5176471, 1, 1, 1)
 [sub_resource type="ViewportTexture" id="ViewportTexture_vj8yi"]
 viewport_path = NodePath("SubViewport")
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=69555869 node_paths=PackedStringArray("healthBar")]
+[sub_resource type="Animation" id="Animation_vj8yi"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_hvovt"]
+resource_name = "attack"
+length = 0.4
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.19999999, 1, -0.4382535, 0, 0, 0.8988514, 0.4, 1, 0, 0, 0, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jpg2y"]
+_data = {
+&"RESET": SubResource("Animation_vj8yi"),
+&"attack": SubResource("Animation_hvovt")
+}
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=69555869 node_paths=PackedStringArray("healthBar", "animationPlayer")]
 script = ExtResource("1_vj8yi")
 healthBar = NodePath("SubViewport/ProgressBar")
+animationPlayer = NodePath("AnimationPlayer")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=24376320]
 shape = SubResource("CapsuleShape3D_vj8yi")
@@ -32,7 +60,7 @@ cast_shadow = 0
 mesh = SubResource("CapsuleMesh_hvovt")
 surface_material_override/0 = SubResource("StandardMaterial3D_u8vuu")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1825009545]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1825009545]
 transform = Transform3D(-1.1421661e-08, 7.2912627e-09, 0.30999994, 0.16680464, 0.26129714, 0, -0.26129714, 0.16680464, -1.3550528e-08, -0.016549349, 0.6428207, -0.48219895)
 cast_shadow = 0
 mesh = SubResource("PrismMesh_pwrsv")
@@ -51,3 +79,8 @@ transform = Transform3D(0.64, 0, 0, 0, 1.661613, 0, 0, 0, 0.64, 0, 1.2945946, 0)
 billboard = 1
 render_priority = 1
 texture = SubResource("ViewportTexture_vj8yi")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1629818653]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=526054788]
+libraries/ = SubResource("AnimationLibrary_jpg2y")
