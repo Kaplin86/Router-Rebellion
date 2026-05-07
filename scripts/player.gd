@@ -6,6 +6,8 @@ class_name PlayerCharacter
 
 @export var uiManager : UiManager
 
+@export var inventory : Dictionary[int,Dictionary] = {}
+
 
 func _process(delta):
 	var inputLR = Input.get_axis("east","west")
@@ -34,3 +36,13 @@ func turnToMouse():
 	if position3D:
 		var newPosition = Vector3(position3D.x,global_position.y,position3D.z)
 		look_at(newPosition)
+
+func attemptToGetItem(item : BulletPayload):
+	for I in inventory:
+		var data = inventory[I]
+		if item.is_equal(data.get("item",null)):
+			data["count"] += 1
+			return true
+	
+	var index = inventory.size()
+	inventory[index] = {"item":item,"count":1}

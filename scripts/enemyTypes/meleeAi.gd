@@ -18,7 +18,8 @@ func targetingBehavior(delta):
 		agent.avoidance_enabled = true
 		agent.radius = 1
 	
-	agent.target_position = targetedPlayer.global_position
+	
+	agent.target_position = target.global_position
 	
 	var nextPos = agent.get_next_path_position()
 	if nextPos != global_position:
@@ -31,7 +32,7 @@ func targetingBehavior(delta):
 
 func attemptAttack():
 	if canAttack:
-		if targetedPlayer.global_position.distance_squared_to(global_position) <= attackRange:
+		if target.global_position.distance_squared_to(global_position) <= attackRange:
 			canAttack = false
 			playAnimation("attack")
 			damageTarget()
@@ -39,4 +40,4 @@ func attemptAttack():
 			canAttack = true
 
 func damageTarget():
-	targetedPlayer.takeDamage(round(baseDamage + (baseDamage * randf_range(0,randomDamageFactor))))
+	target.takeDamage(round(baseDamage + (baseDamage * randf_range(0,randomDamageFactor))))

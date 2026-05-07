@@ -7,7 +7,7 @@ class_name BaseEnemy
 @export var healthBar : ProgressBar
 
 var collisionArea : Area3D
-var targetedPlayer : PlayerCharacter
+var target : BaseAttackable
 var targeting = false
 
 
@@ -21,10 +21,14 @@ func _process(delta):
 	checkDeath()
 	
 	if targeting:
-		targetingBehavior(delta)
+		if target:
+			targetingBehavior(delta)
+		else:
+			targeting = false
+		
 
 func targetingBehavior(delta):
-	look_at(targetedPlayer.global_position)
+	look_at(target.global_position)
 
 
 func checkDeath():
@@ -44,6 +48,7 @@ func createArea(range):
 	area.body_entered.connect(onEnter)
 
 func onEnter(body : Node3D):
-	if body is PlayerCharacter:
-		targetedPlayer = body
-		targeting = true
+	if body is BaseAttackable:
+		if body.team != team:
+			target = body
+			targeting = true

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bjkqckhiyoipf"]
+
+[ext_resource type="Texture2D" uid="uid://dyaus3jjddqcs" path="res://icon.svg" id="1_dgtp1"]
+[ext_resource type="Script" uid="uid://dh7ahglsrhaad" path="res://scripts/ground_item.gd" id="1_sxkc3"]
+
+[sub_resource type="Gradient" id="Gradient_dgtp1"]
+offsets = PackedFloat32Array(0, 0.024523161, 0.7002725, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6ecyt"]
+gradient = SubResource("Gradient_dgtp1")
+fill_from = Vector2(1, 0.4871795)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3idk0"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("GradientTexture2D_6ecyt")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_l40o6"]
+material = SubResource("StandardMaterial3D_3idk0")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_oe8gi"]
+radius = 0.7253313
+
+[node name="GroundItem" type="Node3D" unique_id=983451556]
+script = ExtResource("1_sxkc3")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1380519482]
+transform = Transform3D(0.3508706, 0, 0, 0, 0.3508706, 0, 0, 0, 0.53, 0, 0, 0)
+billboard = 1
+render_priority = 2
+texture = ExtResource("1_dgtp1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=98523845]
+transform = Transform3D(0.575, 0, 0, 0, 0.575, 0, 0, 0, 0.575, 0, 0.42029274, 0)
+mesh = SubResource("CylinderMesh_l40o6")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1103594856]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1106164080]
+shape = SubResource("SphereShape3D_oe8gi")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

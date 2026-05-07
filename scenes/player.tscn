@@ -38,6 +38,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_u8vuu")
 [node name="Marker3D" type="Marker3D" parent="." unique_id=1011424493]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11838633, -0.7652919)
 
-[node name="ShootingManager" type="Node" parent="." unique_id=676399713 node_paths=PackedStringArray("shootPos")]
+[node name="ShootingManager" type="Node" parent="." unique_id=676399713 node_paths=PackedStringArray("shootPos", "plyr")]
 script = ExtResource("2_g2els")
 shootPos = NodePath("../Marker3D")
+plyr = NodePath("..")

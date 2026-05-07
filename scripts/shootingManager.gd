@@ -8,8 +8,8 @@ extends Node
 @onready var cooldown = Timer.new()
 @onready var baseBullet = preload("res://scenes/bullet.tscn")
 
+@export var plyr : PlayerCharacter
 
-var plyr : PlayerCharacter
 var canFire = true
 
 

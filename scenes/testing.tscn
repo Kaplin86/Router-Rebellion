@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cgo16wfjsny5p" path="res://scenes/testEnemy.tscn" id="4_3dx25"]
 [ext_resource type="Script" uid="uid://kl3h2u0d8rl2" path="res://scripts/dpsTracker.gd" id="4_nuoa6"]
 [ext_resource type="Script" uid="uid://clmre742s2lff" path="res://scripts/enemyTypes/meleeAi.gd" id="6_kri1i"]
+[ext_resource type="PackedScene" uid="uid://bjkqckhiyoipf" path="res://scenes/ground_item.tscn" id="8_gi1h7"]
+[ext_resource type="Script" uid="uid://xarx23kgsax4" path="res://scripts/resources/bulletPayload.gd" id="9_jjnc2"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_5qbqa"]
 vertices = PackedVector3Array(-10.25, 4.5, -19.5, -10.5, 4.5, -23.5, -11.5, 4.5, -23.5, -11.5, 4.5, -18.5, 16.5, 4.5, -48.25, 16.5, 4.5, -19.75, 17.5, 4.5, -18.5, 17.5, 4.5, -49.5, -11.5, 4.5, -28.5, -10.5, 4.5, -28.5, -10.25, 4.5, -48.5, -11.5, 4.5, -49.5, -9.75, 2, -27.25, -11.5, 2, -27.25, -11.25, 2, -24.5, -9.25, 2, -24.25, 15.5, 2, -47.25, -9.25, 2, -47.25, -9.25, 2, -27.75, 15.5, 2, -20.5, -9.25, 2, -20.5, -28.25, 2, -7.25, -28.5, 2, -9.25, -30.5, 2, -9.5, -33.25, 2, -9.75, -33.75, 2, -9.25, -28.25, 2, -4.5, -37.25, 2, -9.25, -37.25, 2, -0.5, -28.5, 2, -0.5, -13.75, 2, -7.25, -13.5, 2, -4.5, -13.25, 2, -7.75, -13.25, 2, 13.5, 9.5, 2, 13.5, 9.5, 2, -9.25, -30.25, 2, -24.5, -33.5, 2, -27.5, -13.25, 2, -9.25, -26.5, 4.5, -3.5, -27.5, 4.5, -3.5, -27.75, 4.5, 0.5, -26.5, 4.5, 1.5, -38.5, 4.5, 0.25, -38.5, 4.5, -10.25, -39.5, 4.5, -11.5, -39.5, 4.5, 1.5, -34.5, 4.5, -10.5, -34.5, 4.5, -11.5, -29.5, 4.5, -11.5, -29.5, 4.5, -10.5, -27.75, 4.5, -10.5, -26.5, 4.5, -11.5, -27.5, 4.5, -8.5, -26.5, 4.5, -8.5, -15.5, 4.5, -8.5, -14.5, 4.5, -8.5, -14.25, 4.5, -10.5, -15.5, 4.5, -11.5, 11.5, 4.5, -11.5, 10.5, 4.5, -10.25, -14.25, 4.5, 14.5, -14.5, 4.5, -3.5, -15.5, 4.5, -3.5, -15.5, 4.5, 15.5, 10.25, 4.5, 14.5, 11.5, 4.5, 15.5)
@@ -80,6 +82,25 @@ sky_material = SubResource("ProceduralSkyMaterial_pcu7d")
 background_mode = 2
 sky = SubResource("Sky_l6grw")
 tonemap_mode = 2
+
+[sub_resource type="Resource" id="Resource_j8asw"]
+script = ExtResource("9_jjnc2")
+size = 2.0
+baseDamage = 1.5
+visualType = "BIG scraps"
+speed = 4.0
+metadata/_custom_type_script = "uid://xarx23kgsax4"
+
+[sub_resource type="Resource" id="Resource_8mr64"]
+script = ExtResource("9_jjnc2")
+baseDamage = 3.0
+visualType = "Sharper Scraps"
+metadata/_custom_type_script = "uid://xarx23kgsax4"
+
+[sub_resource type="Resource" id="Resource_utrvu"]
+script = ExtResource("9_jjnc2")
+visualType = "Scraps"
+metadata/_custom_type_script = "uid://xarx23kgsax4"
 
 [node name="Node3D" type="Node3D" unique_id=902027734]
 
@@ -198,13 +219,14 @@ script = ExtResource("4_nuoa6")
 dummyEnemy = NodePath("../CharacterBody3D6")
 
 [node name="CharacterBody3D3" parent="." unique_id=333422114 instance=ExtResource("4_3dx25")]
-transform = Transform3D(0.6352968, 0, -0.77226806, 0, 1, 0, 0.77226806, 0, 0.6352968, -34.746765, 2.5, -3.4153786)
+transform = Transform3D(0.6352968, 0, -0.77226806, 0, 1, 0, 0.77226806, 0, 0.6352968, -17.855782, 2.5, -6.083297)
 script = ExtResource("6_kri1i")
 movementSpeed = 200
 attackSpeed = 0.6
 attackRange = 5
 baseDamage = 5
 randomDamageFactor = 0.15
+team = 1
 
 [node name="CharacterBody3D4" parent="." unique_id=69555869 instance=ExtResource("4_3dx25")]
 transform = Transform3D(-0.03791693, 0, -0.99928087, 0, 1, 0, 0.99928087, 0, -0.03791693, -33.74184, 2.5, -7.189226)
@@ -237,3 +259,19 @@ randomDamageFactor = 0.15
 transform = Transform3D(-2.677046, 0, -2.689879, 0, 3.795, 0, 2.689879, 0, -2.677046, -3.3133912, 4.970928, -41.005573)
 Hp = 100000000
 MaxHp = 100000000
+
+[node name="GroundItem" parent="." unique_id=983451556 instance=ExtResource("8_gi1h7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.361126, 1.7245572, 11.54955)
+Item = SubResource("Resource_j8asw")
+
+[node name="GroundItem2" parent="." unique_id=1858789490 instance=ExtResource("8_gi1h7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.693754, 1.7245572, 9.886674)
+Item = SubResource("Resource_8mr64")
+
+[node name="GroundItem3" parent="." unique_id=662735397 instance=ExtResource("8_gi1h7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.983864, 1.7245572, 6.0616193)
+Item = SubResource("Resource_utrvu")
+
+[node name="GroundItem4" parent="." unique_id=1399500853 instance=ExtResource("8_gi1h7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.766895, 1.7245572, 8.119394)
+Item = SubResource("Resource_utrvu")

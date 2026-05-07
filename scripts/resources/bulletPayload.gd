@@ -1,4 +1,4 @@
-extends Node
+extends Resource
 class_name BulletPayload
 
 @export var size = 1.0
@@ -9,3 +9,11 @@ class_name BulletPayload
 
 func _to_string() -> String:
 	return visualType + "(" + str(size) + " size, " + str(baseDamage) + " dmg)" 
+
+func is_equal(item : BulletPayload):
+	
+	if item.get("size") == size:
+		if item.baseDamage == baseDamage:
+			if item.visualType == visualType:
+				return true
+	return false
