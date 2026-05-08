@@ -33,6 +33,12 @@ func loadFactoryFromFile():
 		var resource = load("res://data/startingFactory.tres")
 		currentFactorySave = resource.duplicate(true)
 
+func loadTextureFromPath(path : String) -> Texture2D:
+	var texture = null
+	texture = load(path + ".png")
+	if texture == null:
+		texture =  load(path + ".svg")
+	return texture
 
 func setupFactoryNodeDefinitions():
 	for I in factoryNodePaths:

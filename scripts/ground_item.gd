@@ -8,3 +8,10 @@ func _on_area_3d_body_entered(body):
 		process_mode = Node.PROCESS_MODE_DISABLED
 		queue_free()
 	pass # Replace with function body.
+
+func _ready():
+	var texture : Texture2D = References.loadTextureFromPath("res://sprites/item/" + Item.visualType)
+	if texture:
+		var img = texture.get_image()
+		img.resize(128,128)
+	$Sprite3D.texture = texture

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://udplv28tkqr7" path="res://scenes/player.tscn" id="1_ryjsw"]
 [ext_resource type="Script" uid="uid://vo84w6msmwsm" path="res://scripts/uiManager.gd" id="2_5qbqa"]
 [ext_resource type="PackedScene" uid="uid://n8p1tds8xm7t" path="res://scenes/shaderCamera.tscn" id="2_pcu7d"]
+[ext_resource type="PackedScene" uid="uid://gujsgg2xwdou" path="res://scenes/uiElements/itemPanel.tscn" id="3_j8asw"]
 [ext_resource type="Script" uid="uid://byvc7b0buntrg" path="res://scripts/factory_menu_loader.gd" id="3_l6grw"]
 [ext_resource type="PackedScene" uid="uid://cgo16wfjsny5p" path="res://scenes/testEnemy.tscn" id="4_3dx25"]
 [ext_resource type="Script" uid="uid://kl3h2u0d8rl2" path="res://scripts/dpsTracker.gd" id="4_nuoa6"]
@@ -124,7 +125,7 @@ drag = 7.0
 uiManager = NodePath("../Control")
 team = 1
 
-[node name="Control" type="Control" parent="." unique_id=1941928461 node_paths=PackedStringArray("player", "healthBar", "statusLog")]
+[node name="Control" type="Control" parent="." unique_id=1941928461 node_paths=PackedStringArray("player", "healthBar", "statusLog", "inventoryPanels")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -134,17 +135,18 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("2_5qbqa")
 player = NodePath("../Player")
-healthBar = NodePath("ProgressBar")
-statusLog = NodePath("VBoxContainer")
+healthBar = NodePath("HP")
+statusLog = NodePath("NotifBar")
+inventoryPanels = [NodePath("Panel/HBoxContainer/Panel"), NodePath("Panel/HBoxContainer/Panel2"), NodePath("Panel/HBoxContainer/Panel4"), NodePath("Panel/HBoxContainer/Panel5"), NodePath("Panel/HBoxContainer/Panel6"), NodePath("Panel/HBoxContainer/Panel7"), NodePath("Panel/HBoxContainer/Panel8"), NodePath("Panel/HBoxContainer/Panel3")]
 
-[node name="ProgressBar" type="ProgressBar" parent="Control" unique_id=1472127175]
+[node name="HP" type="ProgressBar" parent="Control" unique_id=1472127175]
 layout_mode = 0
 anchor_left = 0.5546875
 anchor_top = 0.9398148
 anchor_right = 0.9835069
 anchor_bottom = 0.9814815
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=36406786]
+[node name="NotifBar" type="VBoxContainer" parent="Control" unique_id=36406786]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.7682292
@@ -154,10 +156,10 @@ anchor_bottom = 0.92901236
 alignment = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="Control/VBoxContainer" unique_id=897053294]
+[node name="Panel" type="Panel" parent="Control/NotifBar" unique_id=897053294]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer/Panel" unique_id=1621857014]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/NotifBar/Panel" unique_id=1621857014]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -166,13 +168,50 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "HGHSGFHSGFH"
 
-[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1018866314]
+[node name="Panel" type="Panel" parent="Control" unique_id=1867501944]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22222222
+anchor_top = 0.013888889
+anchor_right = 0.778
+anchor_bottom = 0.125
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel" unique_id=1092875481]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 2.5
+offset_top = 2.5
+offset_right = -2.5
+offset_bottom = -2.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Panel" parent="Control/Panel/HBoxContainer" unique_id=1273697813 instance=ExtResource("3_j8asw")]
+layout_mode = 2
+
+[node name="Panel2" parent="Control/Panel/HBoxContainer" unique_id=814660584 instance=ExtResource("3_j8asw")]
+layout_mode = 2
+
+[node name="Panel4" parent="Control/Panel/HBoxContainer" unique_id=230540248 instance=ExtResource("3_j8asw")]
+layout_mode = 2
+
+[node name="Panel5" parent="Control/Panel/HBoxContainer" unique_id=1047309913 instance=ExtResource("3_j8asw")]
+layout_mode = 2
+
+[node name="Panel6" parent="Control/Panel/HBoxContainer" unique_id=1766741522 instance=ExtResource("3_j8asw")]
+layout_mode = 2
+
+[node name="Panel7" parent="Control/Panel/HBoxContainer" unique_id=1589410691 instance=ExtResource("3_j8asw")]
+layout_mode = 2
+
+[node name="Panel8" parent="Control/Panel/HBoxContainer" unique_id=1766114778 instance=ExtResource("3_j8asw")]
+layout_mode = 2
+
+[node name="Panel3" parent="Control/Panel/HBoxContainer" unique_id=490352909 instance=ExtResource("3_j8asw")]
+layout_mode = 2
 
 [node name="Camera3D" parent="." unique_id=1753978119 node_paths=PackedStringArray("targetObject") instance=ExtResource("2_pcu7d")]
 transform = Transform3D(-0.2170378, -0.6175868, 0.75596374, 0.029481882, 0.7699233, 0.6374553, -0.9757181, 0.1606391, -0.14889482, 8.083534, 5.8841944, -4.041705)
