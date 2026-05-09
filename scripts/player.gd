@@ -46,3 +46,30 @@ func attemptToGetItem(item : BulletPayload):
 	
 	var index = inventory.size()
 	inventory[index] = {"item":item,"count":1}
+
+func retrieveItemFromInventory():
+	if inventory.get(0,null):
+		var data = inventory[0]
+		var resource = data.get("item",null)
+		data["count"] -= 1
+		validateInventory()
+		print("returning", resource)
+		return resource
+	else:
+		return null
+
+func validateInventory():
+	var newOrder = []
+	var nums = inventory.keys()
+	nums.sort()
+	for I in nums:
+		var data = inventory[I]
+		if data["count"] > 0:
+			newOrder.append(data)
+	
+	var counter = 0
+	inventory.clear()
+	for I in newOrder:
+		inventory[counter] = I
+		counter += 1
+	

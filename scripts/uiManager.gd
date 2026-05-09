@@ -41,16 +41,22 @@ func addStatus(text : String):
 
 func renderPlayerInventory():
 	var inventory = player.inventory
-	print(inventory)
-	for I : int in inventory.size():
-		var itemData = inventory[I]
-		var respectiveItemTile = inventoryPanels[I]
-		var texNode : TextureRect = respectiveItemTile.get_child(0)
-		var itemChunk  : BulletPayload = itemData.get("item")
-		var texture = load("res://sprites/item/" + itemChunk.visualType + ".png")
-		if texture == null:
-			texture =  load("res://sprites/item/" + itemChunk.visualType + ".svg")
-		texNode.texture = texture
-		
-		var labelNode : Label = respectiveItemTile.get_child(1)
-		labelNode.text = "x"+str(itemData.get("count"))
+	for I : int in inventoryPanels.size():
+		if inventory.has(I):
+			var itemData = inventory[I]
+			var respectiveItemTile = inventoryPanels[I]
+			var texNode : TextureRect = respectiveItemTile.get_child(0)
+			var itemChunk  : BulletPayload = itemData.get("item")
+			var texture = load("res://sprites/item/" + itemChunk.visualType + ".png")
+			if texture == null:
+				texture =  load("res://sprites/item/" + itemChunk.visualType + ".svg")
+			texNode.texture = texture
+			
+			var labelNode : Label = respectiveItemTile.get_child(1)
+			labelNode.text = "x"+str(itemData.get("count"))
+		else:
+			var respectiveItemTile = inventoryPanels[I]
+			var texNode : TextureRect = respectiveItemTile.get_child(0)
+			texNode.texture = null
+			var labelNode : Label = respectiveItemTile.get_child(1)
+			labelNode.text = ""

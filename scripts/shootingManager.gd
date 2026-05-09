@@ -27,11 +27,12 @@ func _ready():
 func _process(delta):
 	if canFire:
 		if Input.is_action_pressed("shoot"):
-			var payload = BulletPayload.new()
-			var value : Array[BulletPayload] = References.runFactorySave(References.currentFactorySave,payload)
-			
-			value = getFinalPayloads(value)
-			shoot(value)
+			var payload = plyr.retrieveItemFromInventory()
+			if payload:
+				var value : Array[BulletPayload] = References.runFactorySave(References.currentFactorySave,payload)
+				
+				value = getFinalPayloads(value)
+				shoot(value)
 
 func getFinalPayloads(bullets: Array[BulletPayload]):
 
