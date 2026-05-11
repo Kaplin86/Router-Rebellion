@@ -43,6 +43,16 @@ func shoot(bullets: Array[BulletPayload]):
 	canFire = false
 	cooldown.start()
 	for I in bullets:
+		
+		
+		
+		var status = SlowingStatus.new()
+		status.potency = 1
+		status.count = 1
+		I.statusEffects.append(status)
+		
+		
+		
 		var newBullet : BulletObject = baseBullet.instantiate()
 		newBullet.team = plyr.team
 		get_parent().add_sibling(newBullet)

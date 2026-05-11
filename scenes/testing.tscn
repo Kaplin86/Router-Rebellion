@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://clmre742s2lff" path="res://scripts/enemyTypes/meleeAi.gd" id="6_kri1i"]
 [ext_resource type="PackedScene" uid="uid://bjkqckhiyoipf" path="res://scenes/ground_item.tscn" id="8_gi1h7"]
 [ext_resource type="Script" uid="uid://xarx23kgsax4" path="res://scripts/resources/bulletPayload.gd" id="9_jjnc2"]
+[ext_resource type="Script" uid="uid://bn1yxx3psvedp" path="res://scripts/resources/statusEffect.gd" id="11_8mr64"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_5qbqa"]
 vertices = PackedVector3Array(-10.25, 4.5, -19.5, -10.5, 4.5, -23.5, -11.5, 4.5, -23.5, -11.5, 4.5, -18.5, 16.5, 4.5, -48.25, 16.5, 4.5, -19.75, 17.5, 4.5, -18.5, 17.5, 4.5, -49.5, -11.5, 4.5, -28.5, -10.5, 4.5, -28.5, -10.25, 4.5, -48.5, -11.5, 4.5, -49.5, -9.75, 2, -27.25, -11.5, 2, -27.25, -11.25, 2, -24.5, -9.25, 2, -24.25, 15.5, 2, -47.25, -9.25, 2, -47.25, -9.25, 2, -27.75, 15.5, 2, -20.5, -9.25, 2, -20.5, -28.25, 2, -7.25, -28.5, 2, -9.25, -30.5, 2, -9.5, -33.25, 2, -9.75, -33.75, 2, -9.25, -28.25, 2, -4.5, -37.25, 2, -9.25, -37.25, 2, -0.5, -28.5, 2, -0.5, -13.75, 2, -7.25, -13.5, 2, -4.5, -13.25, 2, -7.75, -13.25, 2, 13.5, 9.5, 2, 13.5, 9.5, 2, -9.25, -30.25, 2, -24.5, -33.5, 2, -27.5, -13.25, 2, -9.25, -26.5, 4.5, -3.5, -27.5, 4.5, -3.5, -27.75, 4.5, 0.5, -26.5, 4.5, 1.5, -38.5, 4.5, 0.25, -38.5, 4.5, -10.25, -39.5, 4.5, -11.5, -39.5, 4.5, 1.5, -34.5, 4.5, -10.5, -34.5, 4.5, -11.5, -29.5, 4.5, -11.5, -29.5, 4.5, -10.5, -27.75, 4.5, -10.5, -26.5, 4.5, -11.5, -27.5, 4.5, -8.5, -26.5, 4.5, -8.5, -15.5, 4.5, -8.5, -14.5, 4.5, -8.5, -14.25, 4.5, -10.5, -15.5, 4.5, -11.5, 11.5, 4.5, -11.5, 10.5, 4.5, -10.25, -14.25, 4.5, 14.5, -14.5, 4.5, -3.5, -15.5, 4.5, -3.5, -15.5, 4.5, 15.5, 10.25, 4.5, 14.5, 11.5, 4.5, 15.5)
@@ -214,8 +215,9 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Camera3D" parent="." unique_id=1753978119 node_paths=PackedStringArray("targetObject") instance=ExtResource("2_pcu7d")]
-transform = Transform3D(-0.2170378, -0.6175868, 0.75596374, 0.029481882, 0.7699233, 0.6374553, -0.9757181, 0.1606391, -0.14889482, 8.083534, 5.8841944, -4.041705)
+transform = Transform3D(-4.3711392e-08, -0.68581843, 0.7277727, 0, 0.7277728, 0.6858184, -1.0000001, 2.9978075e-08, -3.1811954e-08, 8.083534, 5.8841944, -4.041705)
 targetObject = NodePath("../Player")
+speed = 4.0
 
 [node name="FactoryMenuLoader" type="CanvasLayer" parent="." unique_id=943258784]
 process_mode = 3
@@ -260,41 +262,29 @@ dummyEnemy = NodePath("../CharacterBody3D6")
 [node name="CharacterBody3D3" parent="." unique_id=333422114 instance=ExtResource("4_3dx25")]
 transform = Transform3D(0.6352968, 0, -0.77226806, 0, 1, 0, 0.77226806, 0, 0.6352968, -17.855782, 2.5, -6.083297)
 script = ExtResource("6_kri1i")
-movementSpeed = 200
-attackSpeed = 0.6
 attackRange = 5
-baseDamage = 5
-randomDamageFactor = 0.15
-team = 1
+base_movementSpeed = 200
 
 [node name="CharacterBody3D4" parent="." unique_id=69555869 instance=ExtResource("4_3dx25")]
+process_mode = 4
 transform = Transform3D(-0.03791693, 0, -0.99928087, 0, 1, 0, 0.99928087, 0, -0.03791693, -33.74184, 2.5, -7.189226)
 script = ExtResource("6_kri1i")
-movementSpeed = 200
-attackSpeed = 0.6
 attackRange = 5
-baseDamage = 5
-randomDamageFactor = 0.15
 
 [node name="CharacterBody3D5" parent="." unique_id=1895944031 instance=ExtResource("4_3dx25")]
+process_mode = 4
 transform = Transform3D(0.97273946, 0, -0.23190066, 0, 1, 0, 0.23190066, 0, 0.97273946, -31.240685, 2.5, -1.846158)
 script = ExtResource("6_kri1i")
-movementSpeed = 200
-attackSpeed = 0.6
 attackRange = 5
-baseDamage = 5
-randomDamageFactor = 0.15
 
 [node name="CharacterBody3D7" parent="." unique_id=839934690 instance=ExtResource("4_3dx25")]
+process_mode = 4
 transform = Transform3D(-0.97705674, 0, 0.21297929, 0, 1, 0, -0.21297929, 0, -0.97705674, -30.262476, 2.5000005, -7.790496)
 script = ExtResource("6_kri1i")
-movementSpeed = 200
-attackSpeed = 0.6
 attackRange = 5
-baseDamage = 5
-randomDamageFactor = 0.15
 
 [node name="CharacterBody3D6" parent="." unique_id=654221772 instance=ExtResource("4_3dx25")]
+process_mode = 4
 transform = Transform3D(-2.677046, 0, -2.689879, 0, 3.795, 0, 2.689879, 0, -2.677046, -3.3133912, 4.970928, -41.005573)
 Hp = 100000000
 MaxHp = 100000000
@@ -302,14 +292,17 @@ MaxHp = 100000000
 [node name="GroundItem" parent="." unique_id=983451556 instance=ExtResource("8_gi1h7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.361126, 1.7245572, 11.54955)
 Item = SubResource("Resource_j8asw")
+Count = 3
 
 [node name="GroundItem2" parent="." unique_id=1858789490 instance=ExtResource("8_gi1h7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.693754, 1.7245572, 9.886674)
 Item = SubResource("Resource_8mr64")
+Count = 9
 
 [node name="GroundItem3" parent="." unique_id=662735397 instance=ExtResource("8_gi1h7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.983864, 1.7245572, 6.0616193)
 Item = SubResource("Resource_utrvu")
+Count = 5
 
 [node name="GroundItem4" parent="." unique_id=1399500853 instance=ExtResource("8_gi1h7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.766895, 1.7245572, 8.119394)

@@ -7,6 +7,8 @@ class_name BulletPayload
 @export var speed = 5.0
 @export var spread = 3
 
+@export var statusEffects : Array[BaseStatusEffect] = []
+
 func _to_string() -> String:
 	return visualType + "(" + str(size) + " size, " + str(baseDamage) + " dmg)" 
 

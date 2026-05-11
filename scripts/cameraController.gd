@@ -7,4 +7,5 @@ extends Camera3D
 func _process(delta):
 	if targetObject:
 		global_position = lerp(position, targetObject.global_position + offset, delta * speed)
-		look_at(targetObject.global_position)
+		#look_at(targetObject.global_position)
+		#print(rotation_degrees)

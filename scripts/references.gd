@@ -35,9 +35,11 @@ func loadFactoryFromFile():
 
 func loadTextureFromPath(path : String) -> Texture2D:
 	var texture = null
-	texture = load(path + ".png")
-	if texture == null:
-		texture =  load(path + ".svg")
+	if FileAccess.file_exists(path + ".png"):
+		texture = load(path + ".png")
+	else:
+		if FileAccess.file_exists(path + ".svg"):
+			texture =  load(path + ".svg")
 	return texture
 
 func setupFactoryNodeDefinitions():

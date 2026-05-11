@@ -47,9 +47,7 @@ func renderPlayerInventory():
 			var respectiveItemTile = inventoryPanels[I]
 			var texNode : TextureRect = respectiveItemTile.get_child(0)
 			var itemChunk  : BulletPayload = itemData.get("item")
-			var texture = load("res://sprites/item/" + itemChunk.visualType + ".png")
-			if texture == null:
-				texture =  load("res://sprites/item/" + itemChunk.visualType + ".svg")
+			var texture = References.loadTextureFromPath("res://sprites/item/" + itemChunk.visualType)
 			texNode.texture = texture
 			
 			var labelNode : Label = respectiveItemTile.get_child(1)

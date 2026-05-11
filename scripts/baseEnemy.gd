@@ -3,6 +3,7 @@ class_name BaseEnemy
 
 @export var detectionRange = 15
 
+
 @export_category("nodes")
 @export var healthBar : ProgressBar
 
@@ -16,6 +17,7 @@ func _ready():
 	createArea(detectionRange)
 
 func _process(delta):
+	super(delta)
 	healthBar.max_value = MaxHp
 	healthBar.value = Hp
 	checkDeath()
@@ -46,6 +48,7 @@ func createArea(range):
 	add_child(area)
 	collisionArea = area
 	area.body_entered.connect(onEnter)
+	
 
 func onEnter(body : Node3D):
 	if body is BaseAttackable:

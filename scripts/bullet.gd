@@ -32,6 +32,7 @@ func destroyableColider(obj):
 		if obj.team != team:
 			var damage = payload.baseDamage * sqrt(payload.speed) * payload.size 
 			obj.takeDamage(damage,payload)
+			obj.statuses.append_array(payload.statusEffects)
 			return true
 		return false
 	return true

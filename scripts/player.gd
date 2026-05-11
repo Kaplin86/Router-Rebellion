@@ -1,7 +1,6 @@
 extends BaseAttackable
 class_name PlayerCharacter
 
-@export var playerSpeed : float = 6
 @export var drag : float = 2
 
 @export var uiManager : UiManager

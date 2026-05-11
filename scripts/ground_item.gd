@@ -1,11 +1,18 @@
 extends Node3D
 
 @export var Item : BulletPayload
+@export var Count := 1
+
+var given = false
 
 func _on_area_3d_body_entered(body):
+	if given:
+		return
 	if body is PlayerCharacter:
-		body.attemptToGetItem(Item)
-		process_mode = Node.PROCESS_MODE_DISABLED
+		given = true
+		for I in Count:
+			body.attemptToGetItem(Item)
+		#process_mode = Node.PROCESS_MODE_DISABLED
 		queue_free()
 	pass # Replace with function body.
 

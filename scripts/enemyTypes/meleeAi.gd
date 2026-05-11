@@ -1,11 +1,8 @@
 extends BaseEnemy
 class_name Melee
 
-@export var movementSpeed = 50
-@export var attackSpeed = 0.6
+
 @export var attackRange = 5
-@export var baseDamage = 5
-@export var randomDamageFactor = 0.15
 
 
 var agent : NavigationAgent3D
@@ -24,6 +21,7 @@ func targetingBehavior(delta):
 	var nextPos = agent.get_next_path_position()
 	if nextPos != global_position:
 		nextPos = Vector3(nextPos.x,global_position.y,nextPos.z)
+		print(movementSpeed)
 		velocity = global_position.direction_to(nextPos) * delta * movementSpeed
 		move_and_slide()
 		look_at(nextPos)
@@ -40,4 +38,4 @@ func attemptAttack():
 			canAttack = true
 
 func damageTarget():
-	target.takeDamage(round(baseDamage + (baseDamage * randf_range(0,randomDamageFactor))))
+	target.takeDamage(round(damage + (damage * randf_range(0,randomDamageFactor))))
