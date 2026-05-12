@@ -24,7 +24,10 @@ var attackSpeed = 0
 @export_category("nodes")
 @export var animationPlayer : AnimationPlayer
 
+signal die 
+
 func _process(delta):
+	checkDeath()
 	runStatus() #note to self: DO NOT RUN THIS EVERY FRAME IN THE FUTURE
 
 func runStatus():
@@ -57,3 +60,10 @@ func playAnimation(animationName):
 
 func takeDamage(damage : float, bullet : BulletPayload = null):
 	Hp -= damage
+
+func checkDeath():
+	if Hp <= 0:
+		die.emit()
+		queue_free()
+		process_mode = Node.PROCESS_MODE_DISABLED
+		

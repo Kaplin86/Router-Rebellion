@@ -21,7 +21,6 @@ func targetingBehavior(delta):
 	var nextPos = agent.get_next_path_position()
 	if nextPos != global_position:
 		nextPos = Vector3(nextPos.x,global_position.y,nextPos.z)
-		print(movementSpeed)
 		velocity = global_position.direction_to(nextPos) * delta * movementSpeed
 		move_and_slide()
 		look_at(nextPos)

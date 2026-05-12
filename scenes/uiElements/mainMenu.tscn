@@ -128,3 +128,5 @@ visible = false
 position = Vector2(581.5, 321.5)
 scale = Vector2(1.1728516, 1.0601852)
 texture = ExtResource("1_s4kk7")
+
+[connection signal="pressed" from="Panel/VSplitContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

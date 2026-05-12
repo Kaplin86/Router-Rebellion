@@ -14,13 +14,13 @@ var targeting = false
 
 
 func _ready():
+	await get_tree().create_timer(0.5).timeout
 	createArea(detectionRange)
 
 func _process(delta):
 	super(delta)
 	healthBar.max_value = MaxHp
 	healthBar.value = Hp
-	checkDeath()
 	
 	if targeting:
 		if target:
@@ -33,10 +33,7 @@ func targetingBehavior(delta):
 	look_at(target.global_position)
 
 
-func checkDeath():
-	if Hp <= 0:
-		queue_free()
-		process_mode = Node.PROCESS_MODE_DISABLED
+
 
 func createArea(range):
 	var newCollisionShape = CollisionShape3D.new()
