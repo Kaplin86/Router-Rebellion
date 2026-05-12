@@ -25,7 +25,10 @@ metadata/_custom_type_script = "uid://diqnci5ult8vm"
 script = ExtResource("2_sun6w")
 nodes = Array[ExtResource("1_ce1r1")]([SubResource("Resource_x2uyr"), SubResource("Resource_fb5lx")])
 nodePositions = Dictionary[ExtResource("1_ce1r1"), Vector2]({
-SubResource("Resource_x2uyr"): Vector2(300, 300),
-SubResource("Resource_fb5lx"): Vector2(900, 300)
+SubResource("Resource_x2uyr"): Vector2(100, 300),
+SubResource("Resource_fb5lx"): Vector2(700, 300)
+})
+nodeConnections = Dictionary[ExtResource("1_ce1r1"), Array]({
+SubResource("Resource_x2uyr"): [SubResource("Resource_fb5lx")]
 })
 metadata/_custom_type_script = "uid://b5g7uct24kvpm"
