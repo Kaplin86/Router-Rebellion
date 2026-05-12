@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://bbp3u6k5hjov3"]
+
+[ext_resource type="Script" uid="uid://g1pj5oawjaq5" path="res://scripts/main_menu.gd" id="1_mimgg"]
+[ext_resource type="Texture2D" uid="uid://jrddly36s1uo" path="res://sprites/Ratio-1024x648.png" id="1_s4kk7"]
+
+[node name="Node2D" type="Control" unique_id=1840565244 node_paths=PackedStringArray("paralaxSkewNode")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mimgg")
+paralaxSkewNode = NodePath("Container/Parallax2D/Sprite2D")
+
+[node name="Container" type="Control" parent="." unique_id=1931459205]
+clip_contents = true
+anchors_preset = 0
+offset_right = 717.0
+offset_bottom = 648.0
+
+[node name="Parallax2D" type="Parallax2D" parent="Container" unique_id=1581832446]
+scroll_offset = Vector2(664, 214)
+repeat_size = Vector2(128, 127.275)
+autoscroll = Vector2(90, 90)
+repeat_times = 7
+screen_offset = Vector2(350, 350)
+
+[node name="Sprite2D" type="Node2D" parent="Container/Parallax2D" unique_id=1633393067]
+
+[node name="Control" type="Control" parent="Container/Parallax2D/Sprite2D" unique_id=415286994]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -63.0
+offset_top = -63.274994
+offset_right = 64.0
+offset_bottom = 63.725006
+
+[node name="ColorRect" type="ColorRect" parent="Container/Parallax2D/Sprite2D/Control" unique_id=543529050]
+layout_mode = 0
+offset_right = 4.0
+offset_bottom = 128.0
+
+[node name="ColorRect2" type="ColorRect" parent="Container/Parallax2D/Sprite2D/Control" unique_id=131577393]
+layout_mode = 0
+offset_top = 19.0
+offset_right = 4.0
+offset_bottom = 147.0
+rotation = -1.5707964
+
+[node name="Panel" type="Panel" parent="." unique_id=2147021273]
+layout_mode = 0
+anchor_left = 0.6215278
+anchor_right = 1.0
+anchor_bottom = 1.0
+metadata/_edit_use_anchors_ = true
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Panel" unique_id=1011520788]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+split_offsets = PackedInt32Array(399)
+dragging_enabled = false
+dragger_visibility = 2
+split_offset = 399
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel/VSplitContainer" unique_id=580090830]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 48
+text = "Router Rebellion logo here lols!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VSplitContainer" unique_id=1510293273]
+layout_mode = 2
+theme_override_constants/margin_left = 13
+theme_override_constants/margin_top = 13
+theme_override_constants/margin_right = 13
+theme_override_constants/margin_bottom = 13
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VSplitContainer/MarginContainer" unique_id=672603692]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer" type="Control" parent="Panel/VSplitContainer/MarginContainer/VBoxContainer" unique_id=1229851930]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="Panel/VSplitContainer/MarginContainer/VBoxContainer" unique_id=535551312]
+layout_mode = 2
+text = "Play"
+
+[node name="Spacer5" type="Control" parent="Panel/VSplitContainer/MarginContainer/VBoxContainer" unique_id=1537554510]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button4" type="Button" parent="Panel/VSplitContainer/MarginContainer/VBoxContainer" unique_id=2062725362]
+layout_mode = 2
+text = "Save Files"
+
+[node name="Spacer2" type="Control" parent="Panel/VSplitContainer/MarginContainer/VBoxContainer" unique_id=1451814355]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button2" type="Button" parent="Panel/VSplitContainer/MarginContainer/VBoxContainer" unique_id=1482289212]
+layout_mode = 2
+text = "Settings"
+
+[node name="Spacer3" type="Control" parent="Panel/VSplitContainer/MarginContainer/VBoxContainer" unique_id=1840177697]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button3" type="Button" parent="Panel/VSplitContainer/MarginContainer/VBoxContainer" unique_id=1295401027]
+layout_mode = 2
+text = "I wanted another button"
+
+[node name="Spacer4" type="Control" parent="Panel/VSplitContainer/MarginContainer/VBoxContainer" unique_id=1137184794]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Ratio1024x648" type="Sprite2D" parent="." unique_id=1721171582]
+visible = false
+position = Vector2(581.5, 321.5)
+scale = Vector2(1.1728516, 1.0601852)
+texture = ExtResource("1_s4kk7")
