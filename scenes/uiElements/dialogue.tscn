@@ -99,7 +99,7 @@ border_width_bottom = 5
 corner_radius_top_left = 9
 corner_radius_bottom_right = 9
 
-[node name="Control" type="Control" unique_id=692554453 node_paths=PackedStringArray("textNode", "nameNode")]
+[node name="Control" type="Control" unique_id=692554453 node_paths=PackedStringArray("textNode", "nameNode", "leftCharNode", "rightCharNode")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -111,6 +111,8 @@ textNode = NodePath("Textbox/Text")
 nameNode = NodePath("Name")
 leftCharacter = "Capsule Construct"
 rightCharacter = "Goober"
+leftCharNode = NodePath("SubViewport/Char/leftChar")
+rightCharNode = NodePath("SubViewport/Char/rightChar")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=926540141]
 size = Vector2i(1152, 648)
@@ -238,6 +240,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Name" type="RichTextLabel" parent="." unique_id=570918291]
 clip_contents = false
+custom_minimum_size = Vector2(0, 48.75)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.77996445
@@ -246,14 +249,15 @@ anchor_right = 1.8954158
 anchor_bottom = 1.0119598
 offset_left = 96.48096
 offset_top = 409.5
-offset_right = -1095.519
+offset_right = -1183.519
 offset_bottom = -205.99994
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 26
 theme_override_font_sizes/italics_font_size = 26
 bbcode_enabled = true
-text = "[i]Goober[/i]"
+text = "[i][/i]
+"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
