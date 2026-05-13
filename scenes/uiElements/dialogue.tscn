@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://bm2q7d15mijkl"]
 
+[ext_resource type="Script" uid="uid://cl4ld0xr545g" path="res://scripts/dialogueUI.gd" id="1_mst3m"]
+[ext_resource type="Shader" uid="uid://dwxcrk3y50ktn" path="res://shaders/fading.gdshader" id="1_xg4rh"]
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_xg4rh"]
-viewport_path = NodePath("Char/rightChar/SubViewport")
+viewport_path = NodePath("SubViewport/Char/rightChar/SubViewport")
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_mst3m"]
 
@@ -17,7 +20,7 @@ albedo_color = Color(1, 0, 0, 1)
 disable_receive_shadows = true
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_mst3m"]
-viewport_path = NodePath("Char/leftChar/SubViewport")
+viewport_path = NodePath("SubViewport/Char/leftChar/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfp1t"]
 shading_mode = 0
@@ -28,7 +31,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D2:rotation")
+tracks/0/path = NodePath("Node3D/MeshInstance3D2:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -44,7 +47,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D2:rotation")
+tracks/0/path = NodePath("Node3D/MeshInstance3D2:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -59,6 +62,15 @@ _data = {
 &"RESET": SubResource("Animation_xg4rh"),
 &"idle": SubResource("Animation_mst3m")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mst3m"]
+shader = ExtResource("1_xg4rh")
+shader_parameter/fade_start = 0.9450000448875
+shader_parameter/fade_offset = 0.2950000140125
+shader_parameter/fade_end = 1.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7dnpi"]
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjnga"]
 content_margin_left = 0.0
@@ -87,76 +99,120 @@ border_width_bottom = 5
 corner_radius_top_left = 9
 corner_radius_bottom_right = 9
 
-[node name="Control" type="Control" unique_id=692554453]
+[node name="Control" type="Control" unique_id=692554453 node_paths=PackedStringArray("textNode", "nameNode")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mst3m")
+textNode = NodePath("Textbox/Text")
+nameNode = NodePath("Name")
+leftCharacter = "Capsule Construct"
+rightCharacter = "Goober"
 
-[node name="Char" type="CanvasGroup" parent="." unique_id=688541299]
+[node name="SubViewport" type="SubViewport" parent="." unique_id=926540141]
+size = Vector2i(1152, 648)
+
+[node name="Char" type="CanvasGroup" parent="SubViewport" unique_id=688541299]
 fit_margin = 0.0
 clear_margin = 0.0
 
-[node name="rightChar" type="Sprite2D" parent="Char" unique_id=702071501]
+[node name="rightChar" type="Sprite2D" parent="SubViewport/Char" unique_id=702071501]
 position = Vector2(962, 319)
 scale = Vector2(1.302168, 1.302168)
 texture = SubResource("ViewportTexture_xg4rh")
 
-[node name="SubViewport" type="SubViewport" parent="Char/rightChar" unique_id=533608101]
+[node name="SubViewport" type="SubViewport" parent="SubViewport/Char/rightChar" unique_id=533608101]
 own_world_3d = true
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(219, 286)
 render_target_update_mode = 4
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Char/rightChar/SubViewport" unique_id=1197129053]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewport/Char/rightChar/SubViewport" unique_id=1197129053]
 cast_shadow = 0
 mesh = SubResource("CapsuleMesh_mst3m")
 surface_material_override/0 = SubResource("StandardMaterial3D_7dnpi")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Char/rightChar/SubViewport" unique_id=780965490]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewport/Char/rightChar/SubViewport" unique_id=780965490]
 transform = Transform3D(-1.1421661e-08, 7.2912627e-09, 0.30999994, 0.16680464, 0.26129714, 0, -0.26129714, 0.16680464, -1.3550528e-08, -0.016549349, 0.6428207, -0.48219895)
 cast_shadow = 0
 mesh = SubResource("PrismMesh_vfp1t")
 surface_material_override/0 = SubResource("StandardMaterial3D_76r8h")
 
-[node name="Camera3D" type="Camera3D" parent="Char/rightChar/SubViewport" unique_id=569433108]
+[node name="Camera3D" type="Camera3D" parent="SubViewport/Char/rightChar/SubViewport" unique_id=569433108]
 transform = Transform3D(-0.98027843, 0.009990941, -0.19736888, 0, 0.99872124, 0.050555915, 0.1976216, 0.04955887, -0.9790248, -0.3812742, 0.45656267, -2.196684)
 visible = false
 
-[node name="leftChar" type="Sprite2D" parent="Char" unique_id=314404037]
+[node name="leftChar" type="Sprite2D" parent="SubViewport/Char" unique_id=314404037]
 position = Vector2(215, 319)
 scale = Vector2(1.302168, 1.302168)
 texture = SubResource("ViewportTexture_mst3m")
 
-[node name="SubViewport" type="SubViewport" parent="Char/leftChar" unique_id=125775066]
+[node name="SubViewport" type="SubViewport" parent="SubViewport/Char/leftChar" unique_id=125775066]
 own_world_3d = true
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(219, 286)
+size = Vector2i(449, 417)
 render_target_update_mode = 4
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Char/leftChar/SubViewport" unique_id=103296603]
+[node name="Node3D" type="Node3D" parent="SubViewport/Char/leftChar/SubViewport" unique_id=1895550854]
+transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewport/Char/leftChar/SubViewport/Node3D" unique_id=103296603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3258839, 0)
 cast_shadow = 0
 mesh = SubResource("CapsuleMesh_mst3m")
 surface_material_override/0 = SubResource("StandardMaterial3D_vfp1t")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Char/leftChar/SubViewport" unique_id=516866596]
-transform = Transform3D(-1.142166e-08, 7.291263e-09, 0.30999994, 0.16680464, 0.26129714, -3.7432016e-16, -0.26129714, 0.16680464, -1.3550528e-08, -0.016549349, 0.6428207, -0.48219895)
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewport/Char/leftChar/SubViewport/Node3D" unique_id=1821265349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8245752, 0)
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_mst3m")
+surface_material_override/0 = SubResource("StandardMaterial3D_vfp1t")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="SubViewport/Char/leftChar/SubViewport/Node3D" unique_id=445061561]
+transform = Transform3D(0.9562435, -0.292572, 0, 0.292572, 0.9562435, 0, 0, 0, 1, 0.44862616, -0.909719, 0)
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_mst3m")
+surface_material_override/0 = SubResource("StandardMaterial3D_vfp1t")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="SubViewport/Char/leftChar/SubViewport/Node3D" unique_id=443766210]
+transform = Transform3D(0.02462405, -0.9996968, 0, 0.9996968, 0.02462405, 0, 0, 0, 1, 1.2349317, 1.2191857, 0)
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_mst3m")
+surface_material_override/0 = SubResource("StandardMaterial3D_vfp1t")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="SubViewport/Char/leftChar/SubViewport/Node3D" unique_id=806761033]
+transform = Transform3D(0.02462405, -0.9996968, 0, 0.9996968, 0.02462405, 0, 0, 0, 1, -1.274744, 1.2191857, 0)
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_mst3m")
+surface_material_override/0 = SubResource("StandardMaterial3D_vfp1t")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="SubViewport/Char/leftChar/SubViewport/Node3D" unique_id=1492350809]
+transform = Transform3D(-0.6772742, -0.7357307, 0, 0.7357307, -0.6772742, 0, 0, 0, 1, -0.9304169, -0.6083025, 0)
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_mst3m")
+surface_material_override/0 = SubResource("StandardMaterial3D_vfp1t")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewport/Char/leftChar/SubViewport/Node3D" unique_id=516866596]
+transform = Transform3D(-1.1421659e-08, 7.2912645e-09, 0.30999994, 0.16680463, 0.26129717, -3.7432016e-16, -0.2612971, 0.16680469, -1.3550528e-08, -0.016549349, 2.9687047, -0.48219895)
 cast_shadow = 0
 mesh = SubResource("PrismMesh_vfp1t")
 surface_material_override/0 = SubResource("StandardMaterial3D_76r8h")
 
-[node name="Camera3D" type="Camera3D" parent="Char/leftChar/SubViewport" unique_id=319956811]
+[node name="Camera3D" type="Camera3D" parent="SubViewport/Char/leftChar/SubViewport" unique_id=319956811]
 transform = Transform3D(-0.98027116, -0.01000007, 0.19740428, 0, 0.99871933, 0.05059294, -0.1976574, 0.0495948, -0.97901577, 0.381, 0.457, -2.197)
-visible = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Char/leftChar/SubViewport" unique_id=276985349]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewport/Char/leftChar/SubViewport" unique_id=276985349]
 libraries/ = SubResource("AnimationLibrary_7dnpi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1849889434]
+material = SubResource("ShaderMaterial_mst3m")
+position = Vector2(576, 324)
+texture = SubResource("ViewportTexture_7dnpi")
 
 [node name="Textbox" type="Panel" parent="." unique_id=1511813681]
 layout_mode = 1
@@ -180,23 +236,24 @@ bbcode_enabled = true
 text = "Hey guys, kaplin here."
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=570918291]
+[node name="Name" type="RichTextLabel" parent="." unique_id=570918291]
 clip_contents = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.0017361111
+anchor_left = 0.77996445
 anchor_top = -0.013117284
-anchor_right = 0.9991319
+anchor_right = 1.8954158
 anchor_bottom = 1.0119598
-offset_left = 80.0
+offset_left = 96.48096
 offset_top = 409.5
-offset_right = -960.0
-offset_bottom = -206.0
+offset_right = -1095.519
+offset_bottom = -205.99994
+grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 26
 theme_override_font_sizes/italics_font_size = 26
 bbcode_enabled = true
-text = "[i]Kaplin86[/i]"
+text = "[i]Goober[/i]"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -204,7 +261,7 @@ autowrap_trim_flags = 128
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="RichTextLabel" unique_id=2061858825]
+[node name="Panel" type="Panel" parent="Name" unique_id=2061858825]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
