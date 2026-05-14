@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b03lbdmrx140p"]
+
+[node name="DialogueMinibutton" type="Button" unique_id=273087641]
+anchors_preset = -1
+anchor_right = 0.15104167
+anchor_bottom = 0.1095679
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="Label" parent="." unique_id=986748271]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Example dialogue that is there to indicate whats being said!"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Number" type="Label" parent="." unique_id=2093563658]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
