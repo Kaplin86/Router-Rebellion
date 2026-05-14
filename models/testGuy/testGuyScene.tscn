@@ -1,0 +1,234 @@
+[gd_scene format=3 uid="uid://c7m8e7gimbej2"]
+
+[ext_resource type="Texture2D" uid="uid://dyaus3jjddqcs" path="res://icon.svg" id="1_m2k4m"]
+[ext_resource type="Texture2D" uid="uid://jrddly36s1uo" path="res://sprites/Ratio-1024x648.png" id="2_qelev"]
+[ext_resource type="Texture2D" uid="uid://h636nx1v408f" path="res://sprites/item/scraps.png" id="3_2i4ld"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_k2g8y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0uk3h"]
+shading_mode = 0
+albedo_color = Color(0.5176471, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8n0e"]
+shading_mode = 0
+albedo_color = Color(1, 0.8814177, 0.81206083, 1)
+
+[sub_resource type="Animation" id="Animation_m2k4m"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D/MeshInstance3D3")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.7876115, 0.24949402, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D/MeshInstance3D2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D/MeshInstance3D2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5527321)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MeshInstance3D/Sprite3D:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_m2k4m")]
+}
+
+[sub_resource type="Animation" id="Animation_qelev"]
+resource_name = "die"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D/MeshInstance3D2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.89899004, 0, 0, 1, 1, -5.964, 0, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D/MeshInstance3D2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D/MeshInstance3D3")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.7876115, 0.24949402, 0, 0.99, 1, 0.788, 23.049, 0)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MeshInstance3D/MeshInstance3D3")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.99, 1, 0, 0, 0, 1)
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MeshInstance3D/Sprite3D:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_qelev")]
+}
+
+[sub_resource type="Animation" id="Animation_2i4ld"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D/MeshInstance3D3")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.7876115, -0.2303955, 0, 0.5, 1, 0.788, 0, 0, 1, 1, 0.7876115, -0.2303955, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D/MeshInstance3D3")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D/MeshInstance3D2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.8, -0.20000002, 0, 0.5, 1, -0.8, 0, 0, 1, 1, -0.8, -0.20000002, 0)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MeshInstance3D/MeshInstance3D2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MeshInstance3D/Sprite3D:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_m2k4m")]
+}
+
+[sub_resource type="Animation" id="Animation_n3dpy"]
+resource_name = "wave"
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D/MeshInstance3D3")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.7876115, -0.2303955, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D/MeshInstance3D2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.89899004, 0, 0, 0.26, 1, -0.7717912, 0.24441653, 0, 0.5, 1, -0.89899004, 0, 0, 0.77, 1, -0.7717912, 0.24441653, 0, 1, 1, -0.89899004, 0, 0)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D/MeshInstance3D2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array()
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MeshInstance3D/MeshInstance3D3")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MeshInstance3D/MeshInstance3D2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.5, 0.76666665, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5527321), Vector3(0, 0, -2.5934196), Vector3(0, 0, -1.5527321), Vector3(0, 0, -2.5934196), Vector3(0, 0, -1.5527321)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MeshInstance3D/Sprite3D:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_2i4ld")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sx0hd"]
+_data = {
+&"RESET": SubResource("Animation_m2k4m"),
+&"die": SubResource("Animation_qelev"),
+&"idle": SubResource("Animation_2i4ld"),
+&"wave": SubResource("Animation_n3dpy")
+}
+
+[node name="TestGuyScene" type="Node3D" unique_id=950626360]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2021431392]
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_k2g8y")
+surface_material_override/0 = SubResource("StandardMaterial3D_0uk3h")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D" unique_id=950028202]
+transform = Transform3D(0.010304233, 0.5120741, 0, -0.57036036, 0.009251224, 0, 0, 0, 0.61174923, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_k2g8y")
+surface_material_override/0 = SubResource("StandardMaterial3D_i8n0e")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D" unique_id=180923307]
+transform = Transform3D(0.5704535, 0, 0, 0, 0.5121577, 0, 0, 0, 0.61174935, 0.7876115, 0.24949402, 0)
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_k2g8y")
+surface_material_override/0 = SubResource("StandardMaterial3D_i8n0e")
+
+[node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D" unique_id=1100895327]
+transform = Transform3D(0.4087546, 0, 0, 0, 0.3819366, 0, 0, 0, 1, 0, 0.4688154, -0.5339173)
+flip_h = true
+texture = ExtResource("1_m2k4m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1174648916]
+libraries/ = SubResource("AnimationLibrary_sx0hd")

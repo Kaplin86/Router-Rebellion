@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueHolder" format=3 uid="uid://dqtu7xsemj8gf"]
+
+[ext_resource type="Script" uid="uid://corvyols1rae7" path="res://tools/dialogueHelper/resources/dialogueChunk.gd" id="1_fu1y3"]
+[ext_resource type="Script" uid="uid://bmbfmafnxrlgs" path="res://tools/dialogueHelper/resources/dialogueHolder.gd" id="2_h8rbv"]
+
+[resource]
+script = ExtResource("2_h8rbv")
+metadata/_custom_type_script = "uid://bmbfmafnxrlgs"

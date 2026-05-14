@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://me5k8u6qy6j"]
+
+[ext_resource type="Script" uid="uid://dx4jcrm6cfvww" path="res://tools/dialogueHelper/dialogue_helper_scene.gd" id="1_j72v4"]
+
+[node name="DialogueHelperScene" type="Control" unique_id=1148897049]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j72v4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1586515563]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1549029048]
+layout_mode = 2
+text = "HI!"
