@@ -1,3 +1,4 @@
+@tool
 extends Control
 
 @export var textNode : RichTextLabel
@@ -16,19 +17,14 @@ var bounceTarget = null
 
 var lastSpeaker = ""
 
-func _ready():
-	await doDialogue("Hi! I am capsule construct! reporting for duty!",leftCharacter,leftCharacter,rightCharacter)
-	await doDialogue("wHAT A GOOD DAY IT IS TO BE A CAPSULE CONSTRUCT!",leftCharacter,leftCharacter,rightCharacter)
-	await doDialogue("Ok twin.",rightCharacter,leftCharacter,rightCharacter)
-	await doDialogue("I dont wanna hear it!!! you silly single-capsule creature!!",leftCharacter,leftCharacter,rightCharacter)
-	await doDialogue("Maybe we shouldn't judge a person by their form, but rather by their nature on the inside!!!",rightCharacter,leftCharacter,rightCharacter)
-	await doDialogue("How fun, am i right or am i right?",rightCharacter,leftCharacter,rightCharacter)
+
 
 func _process(delta):
-	if Input.is_action_just_pressed("continue_text"):
-		emit_signal("continuPressed")
+	if !Engine.is_editor_hint():
+		if Input.is_action_just_pressed("continue_text"):
+			emit_signal("continuPressed")
 		
-	doBounce(delta)
+		doBounce(delta)
 
 func doBounce(delta):
 	if bounceTarget:
@@ -48,32 +44,37 @@ func bounce(node):
 	
 	bounceTarget = node
 
-func doDialogue(text : String = "", speaker : String = "Nobody", leftChar = null, rightChar = null):
-	if leftChar != leftCharacter:
+func doDialogue(dialogue : dialogueChunk):
+	if dialogue.leftCharName != leftCharacter:
 		# set the model
 		pass
-	if rightChar != rightChar:
+	if dialogue.rightCharName != rightCharacter:
 		# set the model
 		pass
 	
-	leftCharacter = leftChar
-	rightCharacter = rightChar
+	leftCharacter = dialogue.leftCharName
+	rightCharacter = dialogue.rightCharName
 	
 	var moveBox = false
 	
-	if lastSpeaker != speaker:
+	var speakerName
+	match dialogue.speakingChar:
+		0: speakerName = leftCharacter
+		1: speakerName = rightCharacter
+	
+	if lastSpeaker != speakerName:
 		moveBox = true
-		lastSpeaker = speaker
-		if rightChar == speaker:
+		lastSpeaker = speakerName
+		if dialogue.speakingChar == 1:
 			bounce(rightCharNode)
 		else:
 			bounce(leftCharNode)
 	
 	# set text
-	nameNode.text = "[i]" + speaker + "[/i]"
+	nameNode.text = "[i]" + speakerName + "[/i]"
 	nameNode.reset_size()
 	
-	textNode.text = text
+	textNode.text = dialogue.text
 	textNode.visible_ratio = 0.0	
 	
 	
@@ -84,7 +85,7 @@ func doDialogue(text : String = "", speaker : String = "Nobody", leftChar = null
 		var newTween = create_tween()
 		newTween.set_ease(Tween.EASE_OUT)
 		newTween.set_trans(Tween.TRANS_QUINT)
-		if rightChar == speaker:
+		if dialogue.speakingChar == 1:
 			newTween.tween_property(nameNode,"global_position",Vector2(1083.0 - nameNode.size.x,401),0.5)
 			
 			#nameNode.grow_horizontal = Control.GROW_DIRECTION_BEGIN
@@ -93,7 +94,7 @@ func doDialogue(text : String = "", speaker : String = "Nobody", leftChar = null
 			
 			#nameNode.grow_horizontal = Control.GROW_DIRECTION_END
 	
-	for I in text:
+	for I in dialogue.text:
 		textNode.visible_characters += 1
 		if I in [".",",","?","!",":"]:
 			await get_tree().create_timer(0.1).timeout

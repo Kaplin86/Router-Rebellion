@@ -1,24 +1,44 @@
 [gd_scene format=3 uid="uid://b03lbdmrx140p"]
 
 [node name="DialogueMinibutton" type="Button" unique_id=273087641]
+custom_minimum_size = Vector2(0, 64)
 anchors_preset = -1
 anchor_right = 0.15104167
 anchor_bottom = 0.1095679
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 3
 metadata/_edit_use_anchors_ = true
 
-[node name="Text" type="Label" parent="." unique_id=986748271]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1221497735]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Text" type="Label" parent="HBoxContainer" unique_id=986748271]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Example dialogue that is there to indicate whats being said!"
 vertical_alignment = 1
 clip_text = true
 text_overrun_behavior = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1068641555]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+alignment = 1
+
+[node name="Up" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1037005138]
+layout_mode = 2
+text = "↑"
+
+[node name="Down" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1330783845]
+layout_mode = 2
+text = "↓"
 
 [node name="Number" type="Label" parent="." unique_id=2093563658]
 layout_mode = 0

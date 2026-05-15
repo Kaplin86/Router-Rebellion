@@ -7,8 +7,7 @@ var window : Window
 func _run():
 	
 	window = Window.new()
-	window.always_on_top = true
-	EditorInterface.popup_dialog(window,Rect2(300,300,1000,1000))
+	EditorInterface.popup_dialog(window,Rect2(300,300,1600,1000))
 	
 	var scene = load("res://tools/dialogueHelper/dialogueHelperScene.tscn").instantiate()
 	window.add_child(scene)

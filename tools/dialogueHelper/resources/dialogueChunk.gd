@@ -1,12 +1,12 @@
 extends Resource
 class_name dialogueChunk
 
-## A resource that stores one instance of dialogue
+## A resource that stores one instance of dialogue. Meant to be stored inside a DialogueHolder
 
 ## The text of the speaking character
 @export var text = ""
 ## The speaking character
-@export_enum("left","right") var speakingChar : int
+@export_enum("left","right") var speakingChar : int = 0
 ## Visual name of the left character
 @export var leftCharName = ""
 ## Visual name of the left character
@@ -16,6 +16,6 @@ class_name dialogueChunk
 ## Animation name for left character
 @export var leftAnim : String = ""
 ## Filepath to the model of right character
-@export var rightCharModel : String
+@export var rightCharModel : String = ""
 ## Animation name for right character
 @export var rightAnim : String = ""

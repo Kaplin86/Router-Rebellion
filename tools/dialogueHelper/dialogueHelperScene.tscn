@@ -1,9 +1,28 @@
 [gd_scene format=3 uid="uid://me5k8u6qy6j"]
 
 [ext_resource type="Script" uid="uid://dx4jcrm6cfvww" path="res://tools/dialogueHelper/dialogue_helper_scene.gd" id="1_j72v4"]
-[ext_resource type="PackedScene" uid="uid://b03lbdmrx140p" path="res://tools/dialogueHelper/dialogueMinibutton.tscn" id="2_iynkx"]
+[ext_resource type="PackedScene" uid="uid://bm2q7d15mijkl" path="res://scenes/uiElements/dialogue.tscn" id="3_2le3c"]
 
-[node name="DialogueHelperScene" type="Control" unique_id=1148897049]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iynkx"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2le3c"]
+viewport_path = NodePath("Overarching/HSplitContainer/Panel/VBoxContainer/Container/TextureRect/SubViewport")
+
+[node name="DialogueHelperScene" type="Control" unique_id=1148897049 node_paths=PackedStringArray("DialogueButtonContainer", "dialoguePlayer", "textBox", "leftName", "rightName", "speakingSide")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,6 +30,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j72v4")
+DialogueButtonContainer = NodePath("Overarching/HSplitContainer/ScrollContainer/VBoxContainer")
+dialoguePlayer = NodePath("Overarching/HSplitContainer/Panel/VBoxContainer/Container/TextureRect/SubViewport/Control")
+textBox = NodePath("Overarching/HSplitContainer/Panel/VBoxContainer/CenterContainer/Control/DialogueText")
+leftName = NodePath("Overarching/HSplitContainer/Panel/VBoxContainer/CenterContainer/Control2/LeftName")
+rightName = NodePath("Overarching/HSplitContainer/Panel/VBoxContainer/CenterContainer/Control2/RightName")
+speakingSide = NodePath("Overarching/HSplitContainer/Panel/VBoxContainer/Container/Misc/Speaker/CheckButton")
 
 [node name="Overarching" type="VBoxContainer" parent="." unique_id=1586515563]
 layout_mode = 1
@@ -24,23 +49,125 @@ grow_vertical = 2
 custom_minimum_size = Vector2(0, 35.145)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Overarching/FileSelect" unique_id=1136717861]
+[node name="Select" type="Button" parent="Overarching/FileSelect" unique_id=1136717861]
 layout_mode = 0
-offset_right = 143.0
+offset_left = 27.0
+offset_right = 170.0
 offset_bottom = 31.0
 text = "SELECT FILE HERE"
+
+[node name="AddEmpty" type="Button" parent="Overarching/FileSelect" unique_id=1623279325]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = " + "
 
 [node name="HSplitContainer" type="HSplitContainer" parent="Overarching" unique_id=188940480]
 layout_mode = 2
 size_flags_vertical = 3
+split_offsets = PackedInt32Array(2)
+split_offset = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Overarching/HSplitContainer" unique_id=685689916]
+[node name="ScrollContainer" type="ScrollContainer" parent="Overarching/HSplitContainer" unique_id=492740914]
 layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="DialogueMinibutton" parent="Overarching/HSplitContainer/VBoxContainer" unique_id=273087641 instance=ExtResource("2_iynkx")]
+[node name="VBoxContainer" type="VBoxContainer" parent="Overarching/HSplitContainer/ScrollContainer" unique_id=685689916]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Overarching/HSplitContainer" unique_id=1182020892]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_iynkx")
 
-[connection signal="pressed" from="Overarching/FileSelect/Button" to="." method="_on_button_pressed"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Overarching/HSplitContainer/Panel" unique_id=1431405272]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="HBoxContainer" parent="Overarching/HSplitContainer/Panel/VBoxContainer" unique_id=878294587]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Misc" type="VBoxContainer" parent="Overarching/HSplitContainer/Panel/VBoxContainer/Container" unique_id=1656023807]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Speaker" type="HBoxContainer" parent="Overarching/HSplitContainer/Panel/VBoxContainer/Container/Misc" unique_id=352967654]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Overarching/HSplitContainer/Panel/VBoxContainer/Container/Misc/Speaker" unique_id=1911365512]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Speaker (L/R):"
+
+[node name="CheckButton" type="CheckButton" parent="Overarching/HSplitContainer/Panel/VBoxContainer/Container/Misc/Speaker" unique_id=1135537580]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Overarching/HSplitContainer/Panel/VBoxContainer/Container" unique_id=893655193]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("ViewportTexture_2le3c")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="SubViewport" type="SubViewport" parent="Overarching/HSplitContainer/Panel/VBoxContainer/Container/TextureRect" unique_id=108149778]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Control" parent="Overarching/HSplitContainer/Panel/VBoxContainer/Container/TextureRect/SubViewport" unique_id=692554453 instance=ExtResource("3_2le3c")]
+metadata/_edit_use_anchors_ = true
+
+[node name="CenterContainer" type="HFlowContainer" parent="Overarching/HSplitContainer/Panel/VBoxContainer" unique_id=682145299]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="VBoxContainer" parent="Overarching/HSplitContainer/Panel/VBoxContainer/CenterContainer" unique_id=1295550918]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.4
+
+[node name="Label" type="Label" parent="Overarching/HSplitContainer/Panel/VBoxContainer/CenterContainer/Control" unique_id=1917785457]
+layout_mode = 2
+text = "Text"
+
+[node name="DialogueText" type="TextEdit" parent="Overarching/HSplitContainer/Panel/VBoxContainer/CenterContainer/Control" unique_id=301636132]
+layout_mode = 2
+size_flags_vertical = 3
+wrap_mode = 1
+
+[node name="Control2" type="VBoxContainer" parent="Overarching/HSplitContainer/Panel/VBoxContainer/CenterContainer" unique_id=944615037]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label1" type="Label" parent="Overarching/HSplitContainer/Panel/VBoxContainer/CenterContainer/Control2" unique_id=571921735]
+layout_mode = 2
+text = "Left Character Name"
+
+[node name="LeftName" type="LineEdit" parent="Overarching/HSplitContainer/Panel/VBoxContainer/CenterContainer/Control2" unique_id=984954963]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label2" type="Label" parent="Overarching/HSplitContainer/Panel/VBoxContainer/CenterContainer/Control2" unique_id=1348975582]
+layout_mode = 2
+text = "Right Character Name"
+
+[node name="RightName" type="LineEdit" parent="Overarching/HSplitContainer/Panel/VBoxContainer/CenterContainer/Control2" unique_id=91800454]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="Overarching/FileSelect/Select" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Overarching/FileSelect/AddEmpty" to="." method="_on_add_empty_pressed"]
+[connection signal="pressed" from="Overarching/HSplitContainer/Panel/VBoxContainer/Container/Misc/Speaker/CheckButton" to="." method="on_any_change"]
+[connection signal="text_changed" from="Overarching/HSplitContainer/Panel/VBoxContainer/CenterContainer/Control/DialogueText" to="." method="on_any_change"]
+[connection signal="text_changed" from="Overarching/HSplitContainer/Panel/VBoxContainer/CenterContainer/Control2/LeftName" to="." method="on_any_change"]
+[connection signal="text_changed" from="Overarching/HSplitContainer/Panel/VBoxContainer/CenterContainer/Control2/RightName" to="." method="on_any_change"]
