@@ -14,6 +14,7 @@ Early prototype - core shooting and graph-based bullet customization implemented
 - Melee enemy AI
 - Dialogue Editor (intended for developer)
 - Dynamic spawning triggers for enemies
+- Inventory and item pickup system
 
 ## Keybinds
 - WASD / Arrow Keys - Movement
