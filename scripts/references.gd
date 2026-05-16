@@ -34,13 +34,19 @@ func loadFactoryFromFile():
 		currentFactorySave = resource.duplicate(true)
 
 func loadTextureFromPath(path : String) -> Texture2D:
-	var texture = null
-	if FileAccess.file_exists(path + ".png"):
-		texture = load(path + ".png")
+	if OS.has_feature("editor"):
+		var texture = null
+		if FileAccess.file_exists(path + ".png"):
+			texture = load(path + ".png")
+		else:
+			if FileAccess.file_exists(path + ".svg"):
+				texture =  load(path + ".svg")
+		return texture
 	else:
-		if FileAccess.file_exists(path + ".svg"):
-			texture =  load(path + ".svg")
-	return texture
+		var texture = load(path.to_lower() + ".png")
+		if texture == null:
+			texture = load(path.to_lower() + ".svg")
+		return texture
 
 func setupFactoryNodeDefinitions():
 	for I in factoryNodePaths:

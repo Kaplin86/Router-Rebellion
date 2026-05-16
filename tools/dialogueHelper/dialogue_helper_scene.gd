@@ -55,7 +55,8 @@ func _on_button_pressed():
 func fileAsk(filter):
 	var file_dialog = FileDialog.new()
 	file_dialog.filters = PackedStringArray(filter)
-	EditorInterface.get_base_control().add_child(file_dialog)
+	
+	get_parent().add_child(file_dialog)
 	file_dialog.popup_centered_ratio()
 	var temp = await file_dialog.file_selected
 	

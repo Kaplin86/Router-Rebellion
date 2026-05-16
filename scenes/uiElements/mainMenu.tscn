@@ -104,7 +104,7 @@ size_flags_vertical = 3
 [node name="Button4" type="Button" parent="Panel/VSplitContainer/MarginContainer/VBoxContainer" unique_id=2062725362]
 layout_mode = 2
 disabled = true
-text = "Save Files"
+text = "Settings"
 
 [node name="Spacer2" type="Control" parent="Panel/VSplitContainer/MarginContainer/VBoxContainer" unique_id=1451814355]
 layout_mode = 2
@@ -112,8 +112,7 @@ size_flags_vertical = 3
 
 [node name="Button2" type="Button" parent="Panel/VSplitContainer/MarginContainer/VBoxContainer" unique_id=1482289212]
 layout_mode = 2
-disabled = true
-text = "Settings"
+text = "Dialogue Editor (WIP AND BUGGY)"
 
 [node name="Spacer3" type="Control" parent="Panel/VSplitContainer/MarginContainer/VBoxContainer" unique_id=1840177697]
 layout_mode = 2
@@ -135,3 +134,4 @@ scale = Vector2(1.1728516, 1.0601852)
 texture = ExtResource("1_s4kk7")
 
 [connection signal="pressed" from="Panel/VSplitContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/VSplitContainer/MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

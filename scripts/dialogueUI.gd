@@ -48,30 +48,31 @@ func bounce(node):
 	bounceTarget = node
 
 func doDialogue(dialogue : dialogueChunk):
-	if dialogue.leftCharModel != "":
-		if dialogue.leftCharModel != currentLeftModel:
-			currentLeftModel = dialogue.leftCharModel
-			
+	if OS.has_feature("editor"): #temp for the ship
+		if dialogue.leftCharModel != "":
+			if dialogue.leftCharModel != currentLeftModel:
+				currentLeftModel = dialogue.leftCharModel
+				
+				var children =  leftCharNode.get_child(0).get_children()
+				for I in children:
+					if I.is_inside_tree():
+						I.free()
+					
+				var model = load(dialogue.leftCharModel).instantiate()
+				leftCharNode.get_child(0).add_child(model)
+				
+				
+				var camera = Camera3D.new()
+				leftCharNode.get_child(0).add_child(camera)
+				camera.global_position = Vector3(0.381,0.457,-2.197)
+				camera.global_rotation_degrees = Vector3(-2.9,168.6,0.0)
+				print(leftCharNode.get_child(0).get_children())
+		else:
+			currentLeftModel = ""
 			var children =  leftCharNode.get_child(0).get_children()
 			for I in children:
 				if I.is_inside_tree():
 					I.free()
-				
-			var model = load(dialogue.leftCharModel).instantiate()
-			leftCharNode.get_child(0).add_child(model)
-			
-			
-			var camera = Camera3D.new()
-			leftCharNode.get_child(0).add_child(camera)
-			camera.global_position = Vector3(0.381,0.457,-2.197)
-			camera.global_rotation_degrees = Vector3(-2.9,168.6,0.0)
-			print(leftCharNode.get_child(0).get_children())
-	else:
-		currentLeftModel = ""
-		var children =  leftCharNode.get_child(0).get_children()
-		for I in children:
-			if I.is_inside_tree():
-				I.free()
 		
 	if dialogue.rightCharName != rightCharacter:
 		# set the model

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cxna1jkjfhi1r"]
+
+[node name="Control" type="Control" unique_id=1052333362]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=1369860271]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 22.0
+offset_right = 742.0
+offset_bottom = 124.0
+theme_override_font_sizes/font_size = 74
+text = "YOU WIN"
+
+[node name="Label2" type="Label" parent="." unique_id=1560943914]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 123.0
+offset_right = 1780.0
+offset_bottom = 225.0
+theme_override_font_sizes/font_size = 39
+text = "thank you for playing router rebellion: demo 2"
+
+[node name="Label3" type="Label" parent="." unique_id=1540008419]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 406.0
+offset_right = 1132.0
+offset_bottom = 508.0
+theme_override_font_sizes/font_size = 39
+text = "reload the site to play again (your factory should be saved)"

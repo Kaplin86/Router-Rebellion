@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cgo16wfjsny5p" path="res://scenes/testEnemy.tscn" id="11_ccv65"]
 [ext_resource type="Script" uid="uid://clmre742s2lff" path="res://scripts/enemyTypes/meleeAi.gd" id="12_dqanu"]
 [ext_resource type="Script" uid="uid://cgd4d376xsd2s" path="res://scripts/triggers/enemySpawnTrigger.gd" id="13_dqanu"]
+[ext_resource type="Script" uid="uid://btli8314dln7m" path="res://scripts/triggers/winTrigger.gd" id="14_ntmdx"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_6uox0"]
 vertices = PackedVector3Array(-34.5, 4.5, 16.25, -34.5, 4.5, 9, -35.5, 4.5, 9.25, -35.5, 4.5, 17.5, -107.75, 4.5, -7.5, -132.25, 4.5, -7.5, -133.5, 4.5, -6.5, -106.5, 4.5, -6.5, -31.5, 4.5, 17.75, -30.5, 4.5, 16.5, -88.25, 4.5, -25.5, -89.5, 4.5, -24.5, -57.5, 4.5, -24.25, -56.5, 4.5, -25.5, -157.5, 4.5, -13.25, -156.5, 4.5, -13, -156.25, 4.5, -20.5, -157.5, 4.5, -21.5, -106.5, 4.5, -36.25, -107.5, 4.5, -37.5, -30.5, 4.5, 33.5, -31.5, 4.5, 32.25, -89.75, 4.5, -36.5, -88.5, 4.5, -37.5, -132.5, 4.5, -21.5, -133.75, 4.5, -20.5, -57.5, 4.5, 33.5, -56.25, 4.5, 32.5, -89, 2, -20.5, -88.75, 2, -23.25, -90.5, 2, -23.5, -94.25, 2, -20.5, -100.25, 2, -18.5, -90.5, 2, -35.25, -105.25, 2, -35.25, -105.25, 2, -17, -100.5, 2, -16.75, -94.5, 2, -18.5, -61.5, 2, -20.5, -61.25, 2, -18.75, -58.5, 2, -19, -58.5, 2, -23.25, -93.75, 4.5, -17.5, -99.5, 4.5, -17.5, -98.5, 4.5, -16.25, -92.5, 4.5, -16.5, -62.5, 4.5, 33.5, -62.5, 4.5, -19.5, -63.5, 4.5, -18.25, -63.5, 4.5, 32.25, -92.25, 4.5, -18.5, -93.5, 4.5, -19.5, -98.5, 4.5, 32.25, -99.5, 4.5, 33.5, -155.25, 2, -7.5, -134.5, 2, -7.25, -134.5, 2, -19.25, -155.25, 2, -19.25, -61.25, 2, 32.5, -58.5, 2, 32.75, -105.25, 2, -7.25, -100.5, 2, -7, -157.75, 4.5, -11.5, -157.75, 4.5, 5.5, -157.5, 4.5, 7.25, -156.5, 4.5, 7, -159.5, 4.5, -11.5, -159.75, 4.5, -7.5, -159.75, 4.5, 1.5, -159.5, 4.5, 5.5, -156.5, 4.5, -6.5, -177.5, 4.5, 1.5, -176.25, 4.5, 0.5, -176.5, 4.5, -6.25, -177.5, 4.5, -7.5, -156.5, 4.5, 0.5, -155.75, 2, -5.25, -157.5, 2, -5.25, -157.25, 2, -0.5, -155.5, 2, -0.5, -155.25, 2, -5.75, -134.5, 2, -5.5, -155.25, 2, 1.5, -134.5, 2, -0.25, -132.5, 2, -0.5, -132.5, 2, -5.25, -134.5, 2, 1.5, -105.25, 2, -5.75, -105.75, 2, -5.25, -107.5, 2, -5.25, -107.25, 2, -0.5, -105.5, 2, -0.5, -105.25, 2, 1.25, -100.5, 2, 1, -156.25, 4.5, 14.5, -157.5, 4.5, 15.5, -34.5, 4.5, 51.75, -35.5, 4.5, 50.5, -35.75, 4.5, 74.5, -34.5, 4.5, 75.5, -1.75, 4.5, 0.5, -15.5, 4.5, 0.5, -15.5, 4.5, 1.5, -0.5, 4.5, 1.5, -133.75, 4.5, 14.5, -132.5, 4.5, 15.5, -0.25, 4.5, -4.5, -1.5, 4.5, -5.5, -20.5, 4.5, 51.5, -21.5, 4.5, 50.25, 11.5, 4.5, -5.5, 10.25, 4.5, -4.5, -106.5, 4.5, 0.5, -133.5, 4.5, 0.5, -132.25, 4.5, 1.5, -107.75, 4.5, 1.5, 11.5, 4.5, 15.5, 10.25, 4.5, 14.5, -53.75, 4.5, 51.5, -52.5, 4.5, 50.5, -122.5, 4.5, 50.25, -123.5, 4.5, 51.5, -1.5, 4.5, 15.5, -0.25, 4.5, 14.5, -53.5, 4.5, 75.5, -52.5, 4.5, 74.25, -1.75, 4.5, 7.5, -0.5, 4.5, 6.5, -18.25, 4.5, 7.5, -19.5, 4.5, 6.5, -107.5, 4.5, 32.25, -106.5, 4.5, 33.5, -19.5, 4.5, 16.25, -18.5, 4.5, 17.5, -123.5, 4.5, 32.5, -122.5, 4.5, 33.75, -24.5, 4.5, 17.75, -25.5, 4.5, 16.5, -24.5, 4.5, 32.25, -25.5, 4.5, 33.5, -21.5, 4.5, 33.75, -20.5, 4.5, 32.5, -175.25, 2, -5.25, -175.25, 2, -0.5, -35.75, 4.5, 7.5, -34.25, 4.5, -0.5, -35.5, 4.5, 2.25, -18.5, 4.5, -3.5, -21.5, 4.5, -3.5, -21.75, 4.5, -1.5, -18.5, 4.5, -0.5, -35.5, 4.5, -1.5, -37.5, 4.5, 2.5, -37.5, 4.5, 7.5, 0.25, 2, 2.75, -1.5, 2, 2.75, -1.25, 2, 5.5, 0.5, 2, 5.5, 9.5, 2, -3.25, 0.75, 2, -3.25, 0.75, 2, 2.25, 9.5, 2, 7, 0.75, 2, 7.25, -15, 2, 5.5, -14.75, 2, 2.75, -16.5, 2, 2.5, -20.25, 2, 5.5, -21.75, 2.25, 2.25, -20.5, 2, 6, -21.5, 2.5, 0.75, -16.5, 2.5, 0.5, -20.524994, 2, 2.4749985, -29.25, 2, 17.5, -26.5, 2, 17.5, -26.25, 2, 15.5, -29.5, 2, 15.5, -22.5, 2, 2.25, -33.25, 2, 0.75, -33.25, 2, 15.5, -22.5, 2, 0.75, -20.5, 2, 15.5, -15.25, 2.5, 0.75, -15.25, 2.5, 1.5, -14.5, 2.5, 1.5, -14.5, 2.5, 0.75, -105.25, 2, 32.5, -100.5, 2, 32.75, -155.25, 2, 13.5, -134.5, 2, 13.5, 0.75, 2, 13.5, 9.5, 2, 13.5, -29.25, 2, 32.5, -26.5, 2, 32.75, -105.25, 2, 34.25, -100.5, 2, 34.5, -105.75, 2, 34.75, -107.25, 2, 34.75, -107, 2, 49.5, -99, 2, 49.5, -98.75, 2, 34.75, -61.25, 2, 34.25, -58.5, 2, 34.5, -61.75, 2, 34.75, -63.25, 2, 34.75, -63, 2, 49.5, -57, 2, 49.5, -56.75, 2, 34.75, -29.25, 2, 34.25, -26.25, 2, 34.75, -29.75, 2, 34.75, -35, 2, 34.75, -34.75, 2, 49.5, -22.5, 2, 49.5, -22.5, 2, 34.75, -121.25, 2, 34.75, -121.25, 2, 49.5, -53, 2, 49.5, -52.75, 2, 34.75, -51.25, 2, 49.75, -51.25, 2, 51.5, -36.5, 2, 51.5, -36.5, 2, 49.75, -51.25, 2, 73.5, -36.5, 2, 73.5)
@@ -83,6 +84,14 @@ metadata/_custom_type_script = "uid://xarx23kgsax4"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6663l"]
 size = Vector3(9, 11, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pka8t"]
+size = Vector3(3, 4, 3)
+
+[sub_resource type="PrismMesh" id="PrismMesh_6663l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7xwkk"]
+albedo_color = Color(1, 0.44031492, 0.2414695, 1)
 
 [node name="Node3D" type="Node3D" unique_id=1516201106]
 
@@ -3619,6 +3628,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0161362, 1.7245572, 0.06161
 Item = SubResource("Resource_dqanu")
 Count = 5
 
+[node name="GroundItem10" parent="." unique_id=532645858 instance=ExtResource("8_k3nha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.983864, 1.7245572, -3.9383812)
+Item = SubResource("Resource_dqanu")
+Count = 5
+
+[node name="GroundItem11" parent="." unique_id=2110413032 instance=ExtResource("8_k3nha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -122.983864, 1.7245572, -1.9383812)
+Item = SubResource("Resource_dqanu")
+Count = 5
+
+[node name="GroundItem12" parent="." unique_id=1252762209 instance=ExtResource("8_k3nha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -116.983864, 1.7245572, -2.9383812)
+Item = SubResource("Resource_dqanu")
+Count = 5
+
 [node name="GroundItem4" parent="." unique_id=23298155 instance=ExtResource("8_k3nha")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.016136, 1.7245572, -2.9383807)
 Item = SubResource("Resource_ntmdx")
@@ -3812,131 +3836,160 @@ mesh = SubResource("PrismMesh_ccv65")
 [node name="CharacterBody3D5" parent="Area3D3" unique_id=2067444538 instance=ExtResource("11_ccv65")]
 process_mode = 4
 transform = Transform3D(0.6352968, 0, -0.77226806, 0, 1, 0, 0.77226806, 0, 0.6352968, -10.855774, 2.5, -3.0832977)
+visible = false
 script = ExtResource("12_dqanu")
 attackRange = 5
 detectionRange = 60
 Hp = 15
 MaxHp = 15
-base_movementSpeed = 450
+base_movementSpeed = 250
 base_damage = 3
 
 [node name="CharacterBody3D6" parent="Area3D3" unique_id=153994452 instance=ExtResource("11_ccv65")]
 process_mode = 4
 transform = Transform3D(0.6352968, 0, -0.77226806, 0, 1, 0, 0.77226806, 0, 0.6352968, -8.855774, 2.5, -1.0832977)
+visible = false
 script = ExtResource("12_dqanu")
 attackRange = 5
 detectionRange = 60
 Hp = 15
 MaxHp = 15
-base_movementSpeed = 450
+base_movementSpeed = 250
 base_damage = 3
 
 [node name="CharacterBody3D7" parent="Area3D3" unique_id=846742710 instance=ExtResource("11_ccv65")]
 process_mode = 4
 transform = Transform3D(0.6352968, 0, -0.77226806, 0, 1, 0, 0.77226806, 0, 0.6352968, -6.855774, 2.5, -4.0832977)
+visible = false
 script = ExtResource("12_dqanu")
 attackRange = 5
 detectionRange = 60
 Hp = 15
 MaxHp = 15
-base_movementSpeed = 450
+base_movementSpeed = 250
 base_damage = 3
 
 [node name="CharacterBody3D8" parent="Area3D3" unique_id=1321413626 instance=ExtResource("11_ccv65")]
 process_mode = 4
 transform = Transform3D(0.6352968, 0, -0.77226806, 0, 1, 0, 0.77226806, 0, 0.6352968, -2.855774, 2.5, -3.0832977)
+visible = false
 script = ExtResource("12_dqanu")
 attackRange = 5
 detectionRange = 60
 Hp = 15
 MaxHp = 15
-base_movementSpeed = 450
+base_movementSpeed = 250
 base_damage = 3
 
 [node name="CharacterBody3D9" parent="Area3D3" unique_id=265481625 instance=ExtResource("11_ccv65")]
 process_mode = 4
 transform = Transform3D(0.6352968, 0, -0.77226806, 0, 1, 0, 0.77226806, 0, 0.6352968, -0.8557739, 2.5, -1.0832977)
+visible = false
 script = ExtResource("12_dqanu")
 attackRange = 5
 detectionRange = 60
 Hp = 15
 MaxHp = 15
-base_movementSpeed = 450
+base_movementSpeed = 250
 base_damage = 3
 
 [node name="CharacterBody3D10" parent="Area3D3" unique_id=193983828 instance=ExtResource("11_ccv65")]
 process_mode = 4
 transform = Transform3D(0.6352968, 0, -0.77226806, 0, 1, 0, 0.77226806, 0, 0.6352968, 1.1442261, 2.5, -4.0832977)
+visible = false
 script = ExtResource("12_dqanu")
 attackRange = 5
 detectionRange = 60
 Hp = 15
 MaxHp = 15
-base_movementSpeed = 450
+base_movementSpeed = 250
 base_damage = 3
 
 [node name="CharacterBody3D11" parent="Area3D3" unique_id=1759551241 instance=ExtResource("11_ccv65")]
 process_mode = 4
 transform = Transform3D(-0.58152676, 0, -0.81352735, 0, 1, 0, 0.81352735, 0, -0.58152676, -9.051437, 2.5, -28.76809)
+visible = false
 script = ExtResource("12_dqanu")
 attackRange = 5
 detectionRange = 60
 Hp = 15
 MaxHp = 15
-base_movementSpeed = 450
+base_movementSpeed = 250
 base_damage = 3
 
 [node name="CharacterBody3D12" parent="Area3D3" unique_id=928551772 instance=ExtResource("11_ccv65")]
 process_mode = 4
 transform = Transform3D(-0.58152676, 0, -0.81352735, 0, 1, 0, 0.81352735, 0, -0.58152676, -10.465652, 2.5, -26.3186)
+visible = false
 script = ExtResource("12_dqanu")
 attackRange = 5
 detectionRange = 60
 Hp = 15
 MaxHp = 15
-base_movementSpeed = 450
+base_movementSpeed = 250
 base_damage = 3
 
 [node name="CharacterBody3D13" parent="Area3D3" unique_id=233404547 instance=ExtResource("11_ccv65")]
 process_mode = 4
 transform = Transform3D(-0.58152676, 0, -0.81352735, 0, 1, 0, 0.81352735, 0, -0.58152676, -7.050232, 2.5, -25.163204)
+visible = false
 script = ExtResource("12_dqanu")
 attackRange = 5
 detectionRange = 60
 Hp = 15
 MaxHp = 15
-base_movementSpeed = 450
+base_movementSpeed = 250
 base_damage = 3
 
 [node name="CharacterBody3D14" parent="Area3D3" unique_id=629891565 instance=ExtResource("11_ccv65")]
 process_mode = 4
 transform = Transform3D(-0.58152676, 0, -0.81352735, 0, 1, 0, 0.81352735, 0, -0.58152676, -2.0514374, 2.5, -28.76809)
+visible = false
 script = ExtResource("12_dqanu")
 attackRange = 5
 detectionRange = 60
 Hp = 15
 MaxHp = 15
-base_movementSpeed = 450
+base_movementSpeed = 250
 base_damage = 3
 
 [node name="CharacterBody3D15" parent="Area3D3" unique_id=1584422050 instance=ExtResource("11_ccv65")]
 process_mode = 4
 transform = Transform3D(-0.58152676, 0, -0.81352735, 0, 1, 0, 0.81352735, 0, -0.58152676, -3.4656525, 2.5, -26.3186)
+visible = false
 script = ExtResource("12_dqanu")
 attackRange = 5
 detectionRange = 60
 Hp = 15
 MaxHp = 15
-base_movementSpeed = 450
+base_movementSpeed = 250
 base_damage = 3
 
 [node name="CharacterBody3D16" parent="Area3D3" unique_id=1714341423 instance=ExtResource("11_ccv65")]
 process_mode = 4
 transform = Transform3D(-0.58152676, 0, -0.81352735, 0, 1, 0, 0.81352735, 0, -0.58152676, -0.050231934, 2.5, -25.163204)
+visible = false
 script = ExtResource("12_dqanu")
 attackRange = 5
 detectionRange = 60
 Hp = 15
 MaxHp = 15
-base_movementSpeed = 450
+base_movementSpeed = 250
 base_damage = 3
+
+[node name="Area3D4" type="Area3D" parent="." unique_id=866968457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -174, 2, -3)
+script = ExtResource("14_ntmdx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D4" unique_id=158444109]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_pka8t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D4" unique_id=984403870]
+transform = Transform3D(1, 0, 0, 0, 6.9299994, 0, 0, 0, 1, 0, 2.5762334, 0)
+mesh = SubResource("PrismMesh_6663l")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Area3D4" unique_id=1838754693]
+transform = Transform3D(1, 0, 0, 0, -3.0291986e-07, 3.8, 0, -6.9299984, -1.6610328e-07, -0.8147125, 3.5647898, -2.2527266)
+mesh = SubResource("PrismMesh_6663l")
+surface_material_override/0 = SubResource("StandardMaterial3D_7xwkk")
