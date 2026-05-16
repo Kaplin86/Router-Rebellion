@@ -6,18 +6,27 @@ Made in Godot 4.6.1
 Made for Hack Club's [Horizons](https://horizons.hackclub.com/) Event
 
 ## Status
-Early prototype - core shooting and graph-based bullet customization implemented.
+Early prototype - core shooting and graph-based bullet customization implemented. Backend structure for Status Effects, Dialogue Cutscenes, and enemies are close to finish.
 
 ## Current features
 - Customizable bullets with 7 different node types
-- Bullet facctory layouts save to user file
-- DPS tracking dummy
+- Bullet factory layouts save to user file
+- Melee enemy AI
+- Dialogue Editor (intended for developer)
+- Dynamic spawning triggers for enemies
 
 ## Keybinds
 - WASD / Arrow Keys - Movement
 - Mouse - Aim
 - Click - Shoot
 - Q - Open gun editor
+
+### Navigating the gun editor
+This uses the default godot graph node controls:
+- Drag the output circle of a node to an input circle to create a connection
+- Drag the input circle away to break the connection
+- Drag the output circle into open space to create a new node
+- Zoom in and out with scroll wheel
 
 ## Running the project
 1. Clone the repo or download as a ZIP
