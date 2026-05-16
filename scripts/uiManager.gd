@@ -22,7 +22,7 @@ func _process(delta):
 func addStatus(text : String):
 	var newPanel = Panel.new()
 	statusLog.add_child(newPanel)
-	newPanel.custom_minimum_size = Vector2(0,60)
+	newPanel.custom_minimum_size = Vector2(0,90)
 	var newText = RichTextLabel.new()
 	newPanel.add_child(newText)
 	newText.text = text
@@ -52,6 +52,8 @@ func renderPlayerInventory():
 			
 			var labelNode : Label = respectiveItemTile.get_child(1)
 			labelNode.text = "x"+str(itemData.get("count"))
+			
+			texNode.tooltip_text = itemChunk._to_string()
 		else:
 			var respectiveItemTile = inventoryPanels[I]
 			var texNode : TextureRect = respectiveItemTile.get_child(0)

@@ -21,7 +21,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scroll_offset = Vector2(-153.08899, -108.7482)
 right_disconnects = true
 show_grid_buttons = false
 show_arrange_button = false
@@ -60,9 +59,9 @@ anchor_left = 0.2855903
 anchor_top = 0.016975308
 anchor_right = 0.7543403
 anchor_bottom = 0.13271604
-text = "Drag a line from the right side to disconnect
-Drag a new line into space to make a new node
-If you have multiple lines on one node, it chooses the path at random!"
+text = "Drag from one circle to another to create a connection
+drag a circle to empty space to make a new tile
+Scroll to zoom"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="connection_from_empty" from="GraphEdit" to="." method="_on_graph_edit_connection_from_empty"]

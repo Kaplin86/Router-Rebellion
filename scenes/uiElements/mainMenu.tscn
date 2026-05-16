@@ -71,7 +71,9 @@ split_offset = 399
 [node name="RichTextLabel2" type="RichTextLabel" parent="Panel/VSplitContainer" unique_id=580090830]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 48
-text = "Router Rebellion logo here lols!"
+bbcode_enabled = true
+text = "Router Rebellion
+[b](imagine a logo here)[/b]"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -101,6 +103,7 @@ size_flags_vertical = 3
 
 [node name="Button4" type="Button" parent="Panel/VSplitContainer/MarginContainer/VBoxContainer" unique_id=2062725362]
 layout_mode = 2
+disabled = true
 text = "Save Files"
 
 [node name="Spacer2" type="Control" parent="Panel/VSplitContainer/MarginContainer/VBoxContainer" unique_id=1451814355]
@@ -109,6 +112,7 @@ size_flags_vertical = 3
 
 [node name="Button2" type="Button" parent="Panel/VSplitContainer/MarginContainer/VBoxContainer" unique_id=1482289212]
 layout_mode = 2
+disabled = true
 text = "Settings"
 
 [node name="Spacer3" type="Control" parent="Panel/VSplitContainer/MarginContainer/VBoxContainer" unique_id=1840177697]
@@ -117,6 +121,7 @@ size_flags_vertical = 3
 
 [node name="Button3" type="Button" parent="Panel/VSplitContainer/MarginContainer/VBoxContainer" unique_id=1295401027]
 layout_mode = 2
+disabled = true
 text = "I wanted another button"
 
 [node name="Spacer4" type="Control" parent="Panel/VSplitContainer/MarginContainer/VBoxContainer" unique_id=1137184794]

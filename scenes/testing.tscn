@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bk0dotxgst7se"]
 
 [ext_resource type="PackedScene" uid="uid://udplv28tkqr7" path="res://scenes/player.tscn" id="1_ryjsw"]
+[ext_resource type="MeshLibrary" uid="uid://dtg2w4h3ahjsw" path="res://data/tileMeshLibrary.tres" id="1_yh20h"]
 [ext_resource type="Script" uid="uid://vo84w6msmwsm" path="res://scripts/uiManager.gd" id="2_5qbqa"]
 [ext_resource type="PackedScene" uid="uid://n8p1tds8xm7t" path="res://scenes/shaderCamera.tscn" id="2_pcu7d"]
 [ext_resource type="PackedScene" uid="uid://gujsgg2xwdou" path="res://scenes/uiElements/itemPanel.tscn" id="3_j8asw"]
@@ -18,72 +19,18 @@ vertices = PackedVector3Array(-10.25, 4.5, -19.5, -10.5, 4.5, -23.5, -11.5, 4.5,
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(4, 7, 5), PackedInt32Array(5, 7, 6), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(4, 10, 7), PackedInt32Array(7, 10, 11), PackedInt32Array(5, 6, 0), PackedInt32Array(0, 6, 3), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(12, 18, 15), PackedInt32Array(15, 18, 19), PackedInt32Array(19, 20, 15), PackedInt32Array(24, 23, 25), PackedInt32Array(25, 23, 22), PackedInt32Array(25, 22, 21), PackedInt32Array(25, 21, 26), PackedInt32Array(25, 26, 27), PackedInt32Array(27, 26, 29), PackedInt32Array(27, 29, 28), PackedInt32Array(21, 30, 26), PackedInt32Array(26, 30, 31), PackedInt32Array(31, 30, 32), PackedInt32Array(31, 32, 33), PackedInt32Array(33, 32, 34), PackedInt32Array(34, 32, 35), PackedInt32Array(14, 36, 13), PackedInt32Array(13, 36, 37), PackedInt32Array(32, 38, 35), PackedInt32Array(23, 24, 36), PackedInt32Array(36, 24, 37), PackedInt32Array(40, 39, 41), PackedInt32Array(41, 39, 42), PackedInt32Array(43, 46, 44), PackedInt32Array(44, 46, 45), PackedInt32Array(47, 44, 48), PackedInt32Array(48, 44, 45), PackedInt32Array(43, 41, 46), PackedInt32Array(46, 41, 42), PackedInt32Array(50, 49, 51), PackedInt32Array(51, 49, 52), PackedInt32Array(53, 51, 54), PackedInt32Array(54, 51, 52), PackedInt32Array(56, 55, 57), PackedInt32Array(57, 55, 58), PackedInt32Array(60, 57, 59), PackedInt32Array(59, 57, 58), PackedInt32Array(62, 61, 63), PackedInt32Array(63, 61, 64), PackedInt32Array(65, 60, 66), PackedInt32Array(66, 60, 59), PackedInt32Array(65, 66, 61), PackedInt32Array(61, 66, 64)]
 geometry_parsed_geometry_type = 1
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3dx25"]
-albedo_color = Color(0, 0.64705884, 0.08627451, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_nuoa6"]
-material = SubResource("StandardMaterial3D_3dx25")
-size = Vector3(1.05, 1, 1.05)
-
-[sub_resource type="NavigationMesh" id="NavigationMesh_kri1i"]
-geometry_parsed_geometry_type = 1
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_l6grw"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l6grw"]
-albedo_color = Color(0.9999998, 0.80053985, 0.4917397, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_3dx25"]
-material = SubResource("StandardMaterial3D_l6grw")
-size = Vector3(1.05, 1.3, 1.05)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_3dx25"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nuoa6"]
-albedo_color = Color(0.39837918, 0.4320228, 0.39797828, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_kri1i"]
-material = SubResource("StandardMaterial3D_nuoa6")
-size = Vector3(1.05, 1, 1.05)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_5qbqa"]
-
-[sub_resource type="MeshLibrary" id="MeshLibrary_l6grw"]
-item/0/name = "grass"
-item/0/mesh = SubResource("BoxMesh_nuoa6")
-item/0/mesh_transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
-item/0/mesh_cast_shadow = 1
-item/0/shapes = [SubResource("BoxShape3D_l6grw"), Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)]
-item/0/navigation_mesh = SubResource("NavigationMesh_kri1i")
-item/0/navigation_mesh_transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 2, 0, 0, 0)
-item/0/navigation_layers = 1
-item/1/name = "fence"
-item/1/mesh = SubResource("BoxMesh_3dx25")
-item/1/mesh_transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 1, 0)
-item/1/mesh_cast_shadow = 1
-item/1/shapes = [SubResource("BoxShape3D_3dx25"), Transform3D(2, 0, 0, 0, 6, 0, 0, 0, 2, 0, 0, 0)]
-item/1/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 7, 0, 0, 0, 1, 0, 0, 0)
-item/1/navigation_layers = 1
-item/2/name = "bridge"
-item/2/mesh = SubResource("BoxMesh_kri1i")
-item/2/mesh_transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
-item/2/mesh_cast_shadow = 1
-item/2/shapes = [SubResource("BoxShape3D_5qbqa"), Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)]
-item/2/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-item/2/navigation_layers = 1
-
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kri1i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pcu7d"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[sub_resource type="Sky" id="Sky_l6grw"]
+[sub_resource type="Sky" id="Sky_uf0dc"]
 sky_material = SubResource("ProceduralSkyMaterial_pcu7d")
 
 [sub_resource type="Environment" id="Environment_3dx25"]
 background_mode = 2
-sky = SubResource("Sky_l6grw")
+sky = SubResource("Sky_uf0dc")
 tonemap_mode = 2
 
 [sub_resource type="Resource" id="Resource_j8asw"]
@@ -119,7 +66,7 @@ size = Vector3(1, 3.246582, 4.444763)
 navigation_mesh = SubResource("NavigationMesh_5qbqa")
 
 [node name="GridMap" type="GridMap" parent="NavigationRegion3D" unique_id=75851060]
-mesh_library = SubResource("MeshLibrary_l6grw")
+mesh_library = ExtResource("1_yh20h")
 physics_material = SubResource("PhysicsMaterial_kri1i")
 bake_navigation = true
 data = {

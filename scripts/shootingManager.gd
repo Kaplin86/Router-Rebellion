@@ -33,13 +33,23 @@ func _process(delta):
 				
 				value = getFinalPayloads(value)
 				shoot(value)
+			else:
+				plyr.uiManager.addStatus("NO AMMO DETECTED: SUMMONING CONSTRUCT MAGIC BULLET")
+				
+				var templatePayload = BulletPayload.new()
+				templatePayload.baseDamage = 0.9
+				templatePayload.size = 0.9
+				var value : Array[BulletPayload] = References.runFactorySave(References.currentFactorySave,templatePayload)
+				
+				value = getFinalPayloads(value)
+				shoot(value)
 
 func getFinalPayloads(bullets: Array[BulletPayload]):
 
 	return bullets
 
 func shoot(bullets: Array[BulletPayload]):
-	plyr.uiManager.addStatus("Hi" + str(randi()))
+	
 	canFire = false
 	cooldown.start()
 	for I in bullets:
@@ -49,7 +59,7 @@ func shoot(bullets: Array[BulletPayload]):
 		var status = SlowingStatus.new()
 		status.potency = 1
 		status.count = 1
-		I.statusEffects.append(status)
+		#I.statusEffects.append(status)
 		
 		
 		

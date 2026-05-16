@@ -17,6 +17,9 @@ func _process(delta):
 	runDrag(delta)
 	
 	turnToMouse()
+	
+	if Hp <= 0:
+		get_tree().reload_current_scene()
 
 func impulse(movement : Vector3):
 	velocity += movement
